@@ -47,7 +47,7 @@ class AuthViewModel : ObservableObject {
 
  // Firebase Callbacks
  func createAccount() -> Void {
-  service.createNewAccount(email: self.email, password: self.password, passwordConfirm: self.passwordConfirm)
+  service.createNewAccount(email: self.email, password: self.password, passwordConfirm: self.passwordConfirm,image: self.image ?? nil)
  }
 
  func loginUser() -> Void {
@@ -65,6 +65,7 @@ class AuthViewModel : ObservableObject {
   password.removeAll()
   email.removeAll()
   passwordConfirm.removeAll()
+  image = nil
  }
  
 

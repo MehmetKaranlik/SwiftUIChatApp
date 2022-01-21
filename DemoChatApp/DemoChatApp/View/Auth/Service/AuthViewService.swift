@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-import FirebaseAuth
+import Firebase
 
 
 struct AuthViewService : AuthViewProtocol {
@@ -19,7 +19,7 @@ struct AuthViewService : AuthViewProtocol {
 
 
  //creatin new account with validation
- func createNewAccount(email : String , password : String, passwordConfirm : String) {
+ func createNewAccount(email: String, password: String, passwordConfirm: String, image: UIImage?) {
   if AuthValidator.shared.createAccountValidator(
    email: email, password: password, passConfirm: passwordConfirm) {
    Auth.auth().createUser(withEmail: email, password: password) { result, err in
@@ -27,6 +27,8 @@ struct AuthViewService : AuthViewProtocol {
      print("Failed to create user : \(error)")
     }else {
      print("Successfully created user : \(result?.user.uid ?? "")")
+     guard let uuid : String = result?.user.uid else {return}
+     persistImageToStorage(uuid: uuid, image: image)
     }
    }
   }else {
@@ -34,8 +36,23 @@ struct AuthViewService : AuthViewProtocol {
   }
  }
 
-
-
+ // MARK:  uploading imageData to storage
+ func persistImageToStorage(uuid: String, image: UIImage?) {
+  guard let imageData = image?.jpegData(compressionQuality: 1) else {return}
+  let ref = Storage.storage().reference(withPath: uuid)
+  ref.putData(imageData, metadata: nil) { metadata, error in
+   if let err = error {
+    print("Failed to push image to storage: \(err)")
+   }
+   ref.downloadURL { url, error in
+    if let err = error {
+     print("Failed to download image: \(err)")
+    }else {
+     print("Successfully stored image with url: \(url!.absoluteURL)")
+    }
+   }
+  }
+ }
 
   //signing in with validation
  func loginUser(email : String , password : String) {

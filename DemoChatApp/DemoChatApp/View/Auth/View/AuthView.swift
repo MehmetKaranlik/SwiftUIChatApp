@@ -15,6 +15,8 @@ struct AuthView: View {
 
 
   // MARK:  body
+
+
  var body: some View {
   NavigationView {
    VStack(spacing:0) {
@@ -43,19 +45,7 @@ struct AuthView: View {
     ObscuredTextField(bindingText: $viewModel.password, promptText: "Password", labelText: "Password")
 
 
-    VStack{
-     if !viewModel.isLogin {
-
-      DynamicVerticalSpacer(size: 10)
-      ObscuredTextField(bindingText: $viewModel.passwordConfirm, promptText: "Password Confirm", labelText: "Password Confirm")
-     }
-     Spacer()
-     RoundedRectangleButton(buttonTitle: viewModel.isLogin ? "Login": "Register") {
-      buildAuthCallBack()
-     }
-     .padding(.top, viewModel.isLogin ? 50 : 0)
-     Spacer()
-    }// MARK:  Vstack Expand
+    buildBottomVstack()// MARK:  Vstack Expand
 
 
 
@@ -64,9 +54,7 @@ struct AuthView: View {
    .navigationBarHidden(true)
   }
   .navigationViewModifier()
-  .fullScreenCover(isPresented: $viewModel.isPresented, onDismiss:{
-   print(viewModel.image == nil)
-  }) {
+  .fullScreenCover(isPresented: $viewModel.isPresented, onDismiss:{}) {
    ImagePicker(image: $viewModel.image)
   }
 
@@ -76,6 +64,23 @@ struct AuthView: View {
  }// MARK:  body
 
 
+ fileprivate func buildBottomVstack() -> some View {
+  return VStack{
+   if !viewModel.isLogin {
+
+    DynamicVerticalSpacer(size: 10)
+    ObscuredTextField(bindingText: $viewModel.passwordConfirm, promptText: "Password Confirm", labelText: "Password Confirm")
+   }
+   Spacer()
+   RoundedRectangleButton(buttonTitle: viewModel.isLogin ? "Login": "Register") {
+    buildAuthCallBack()
+   }
+   .padding(.top, viewModel.isLogin ? 50 : 0)
+   Spacer()
+  }
+ }
+
+ 
 
  fileprivate func buildAuthCallBack() {
   if !viewModel.isLogin {
