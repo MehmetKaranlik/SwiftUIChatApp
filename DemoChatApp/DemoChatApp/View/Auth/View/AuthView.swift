@@ -8,11 +8,26 @@
 import SwiftUI
 
 struct AuthView: View {
+ // MARK:  properties
+ @ObservedObject var viewModel : AuthViewModel = AuthViewModel()
+
+
+ // MARK:  body
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+     NavigationView {
+      VStack {
+       CustomSegmentedPicker(isLogin: $viewModel.isLogin)
+       Spacer()
+      }
+      .navigationBarHidden(true)
+     }
+
     }
 }
 
+
+
+// MARK:  preview
 struct AuthView_Previews: PreviewProvider {
     static var previews: some View {
         AuthView()

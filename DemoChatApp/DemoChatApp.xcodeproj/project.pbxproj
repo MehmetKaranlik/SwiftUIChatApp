@@ -7,18 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		461BA303279AB8A700B58EBA /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BA302279AB8A700B58EBA /* AuthViewModel.swift */; };
 		4665744F279A2FF6000D5E93 /* StartApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665744E279A2FF6000D5E93 /* StartApp.swift */; };
 		46657453279A2FF7000D5E93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46657452279A2FF7000D5E93 /* Assets.xcassets */; };
 		46657456279A2FF7000D5E93 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46657455279A2FF7000D5E93 /* Preview Assets.xcassets */; };
 		46657462279A30A9000D5E93 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46657461279A30A9000D5E93 /* AuthView.swift */; };
+		46657469279AB713000D5E93 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46657468279AB713000D5E93 /* CustomNavigationBar.swift */; };
+		4665746D279AB730000D5E93 /* CustomSegmentedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665746C279AB730000D5E93 /* CustomSegmentedPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		461BA302279AB8A700B58EBA /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		4665744B279A2FF6000D5E93 /* DemoChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4665744E279A2FF6000D5E93 /* StartApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartApp.swift; sourceTree = "<group>"; };
 		46657452279A2FF7000D5E93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46657455279A2FF7000D5E93 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		46657461279A30A9000D5E93 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		46657468279AB713000D5E93 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		4665746C279AB730000D5E93 /* CustomSegmentedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +38,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		461BA301279AB89700B58EBA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				461BA302279AB8A700B58EBA /* AuthViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		46657442279A2FF6000D5E93 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +101,8 @@
 		4665745E279A308F000D5E93 /* Product */ = {
 			isa = PBXGroup;
 			children = (
+				46657464279AB6EF000D5E93 /* Utils */,
+				46657463279AB6E9000D5E93 /* Components */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -94,6 +110,7 @@
 		4665745F279A3098000D5E93 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				461BA301279AB89700B58EBA /* ViewModel */,
 				46657460279A309D000D5E93 /* View */,
 			);
 			path = Auth;
@@ -105,6 +122,46 @@
 				46657461279A30A9000D5E93 /* AuthView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		46657463279AB6E9000D5E93 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4665746A279AB717000D5E93 /* SegmentedPicker */,
+				46657466279AB700000D5E93 /* NavigationBar */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		46657464279AB6EF000D5E93 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				46657465279AB6F8000D5E93 /* Modifiers */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		46657465279AB6F8000D5E93 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		46657466279AB700000D5E93 /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				46657468279AB713000D5E93 /* CustomNavigationBar.swift */,
+			);
+			path = NavigationBar;
+			sourceTree = "<group>";
+		};
+		4665746A279AB717000D5E93 /* SegmentedPicker */ = {
+			isa = PBXGroup;
+			children = (
+				4665746C279AB730000D5E93 /* CustomSegmentedPicker.swift */,
+			);
+			path = SegmentedPicker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,8 +234,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				461BA303279AB8A700B58EBA /* AuthViewModel.swift in Sources */,
+				46657469279AB713000D5E93 /* CustomNavigationBar.swift in Sources */,
 				46657462279A30A9000D5E93 /* AuthView.swift in Sources */,
 				4665744F279A2FF6000D5E93 /* StartApp.swift in Sources */,
+				4665746D279AB730000D5E93 /* CustomSegmentedPicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
