@@ -19,6 +19,8 @@
 		46C314EA279B460E000FDB8C /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 46C314E9279B460E000FDB8C /* FirebaseStorage */; };
 		46C314EC279B46CE000FDB8C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46C314EB279B46CE000FDB8C /* GoogleService-Info.plist */; };
 		46C314EF279B4A68000FDB8C /* AuthValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C314EE279B4A68000FDB8C /* AuthValidator.swift */; };
+		46C314F2279B560B000FDB8C /* AuthViewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C314F1279B560B000FDB8C /* AuthViewService.swift */; };
+		46C314F4279B58ED000FDB8C /* AuthViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C314F3279B58ED000FDB8C /* AuthViewProtocol.swift */; };
 		46D87D5B279AFC02005D0F15 /* UploadImageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D87D5A279AFC02005D0F15 /* UploadImageButtonView.swift */; };
 		46D87D5D279B0E0B005D0F15 /* DynamicVerticalSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D87D5C279B0E0B005D0F15 /* DynamicVerticalSpacer.swift */; };
 		46D87D60279B0E38005D0F15 /* DynamicHorizontalSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D87D5F279B0E38005D0F15 /* DynamicHorizontalSpacer.swift */; };
@@ -41,6 +43,8 @@
 		4665746C279AB730000D5E93 /* CustomSegmentedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedPicker.swift; sourceTree = "<group>"; };
 		46C314EB279B46CE000FDB8C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		46C314EE279B4A68000FDB8C /* AuthValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthValidator.swift; sourceTree = "<group>"; };
+		46C314F1279B560B000FDB8C /* AuthViewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewService.swift; sourceTree = "<group>"; };
+		46C314F3279B58ED000FDB8C /* AuthViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewProtocol.swift; sourceTree = "<group>"; };
 		46D87D5A279AFC02005D0F15 /* UploadImageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageButtonView.swift; sourceTree = "<group>"; };
 		46D87D5C279B0E0B005D0F15 /* DynamicVerticalSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicVerticalSpacer.swift; sourceTree = "<group>"; };
 		46D87D5F279B0E38005D0F15 /* DynamicHorizontalSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHorizontalSpacer.swift; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 		4665745F279A3098000D5E93 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				46C314F0279B546D000FDB8C /* Service */,
 				461BA301279AB89700B58EBA /* ViewModel */,
 				46657460279A309D000D5E93 /* View */,
 			);
@@ -219,6 +224,15 @@
 				46C314EE279B4A68000FDB8C /* AuthValidator.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		46C314F0279B546D000FDB8C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				46C314F1279B560B000FDB8C /* AuthViewService.swift */,
+				46C314F3279B58ED000FDB8C /* AuthViewProtocol.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		46D87D55279AFB8C005D0F15 /* Utils */ = {
@@ -373,7 +387,9 @@
 				46D87D60279B0E38005D0F15 /* DynamicHorizontalSpacer.swift in Sources */,
 				46657462279A30A9000D5E93 /* AuthView.swift in Sources */,
 				4665744F279A2FF6000D5E93 /* StartApp.swift in Sources */,
+				46C314F2279B560B000FDB8C /* AuthViewService.swift in Sources */,
 				4665746D279AB730000D5E93 /* CustomSegmentedPicker.swift in Sources */,
+				46C314F4279B58ED000FDB8C /* AuthViewProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

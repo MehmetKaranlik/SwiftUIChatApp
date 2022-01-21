@@ -71,7 +71,7 @@ struct AuthView: View {
 
  fileprivate func buildAuthCallBack() {
   if !viewModel.isLogin {
-   viewModel.createNewAccount()
+   viewModel.createAccount()
   }else {
    viewModel.loginUser()
   }
