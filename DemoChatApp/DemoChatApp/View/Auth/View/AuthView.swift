@@ -15,7 +15,8 @@ struct AuthView: View {
  // MARK:  body
     var body: some View {
      NavigationView {
-      VStack {
+      VStack(spacing:0) {
+       NavigationBarView(isLogin: $viewModel.isLogin)
        CustomSegmentedPicker(isLogin: $viewModel.isLogin)
        Spacer()
       }

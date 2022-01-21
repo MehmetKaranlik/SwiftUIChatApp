@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		461BA303279AB8A700B58EBA /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BA302279AB8A700B58EBA /* AuthViewModel.swift */; };
+		461BA305279AF92A00B58EBA /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BA304279AF92A00B58EBA /* NavigationBar.swift */; };
+		461BA309279AF9C600B58EBA /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BA308279AF9C600B58EBA /* UIConstants.swift */; };
 		4665744F279A2FF6000D5E93 /* StartApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665744E279A2FF6000D5E93 /* StartApp.swift */; };
 		46657453279A2FF7000D5E93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46657452279A2FF7000D5E93 /* Assets.xcassets */; };
 		46657456279A2FF7000D5E93 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46657455279A2FF7000D5E93 /* Preview Assets.xcassets */; };
 		46657462279A30A9000D5E93 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46657461279A30A9000D5E93 /* AuthView.swift */; };
-		46657469279AB713000D5E93 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46657468279AB713000D5E93 /* CustomNavigationBar.swift */; };
 		4665746D279AB730000D5E93 /* CustomSegmentedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665746C279AB730000D5E93 /* CustomSegmentedPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		461BA302279AB8A700B58EBA /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		461BA304279AF92A00B58EBA /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		461BA308279AF9C600B58EBA /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
 		4665744B279A2FF6000D5E93 /* DemoChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4665744E279A2FF6000D5E93 /* StartApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartApp.swift; sourceTree = "<group>"; };
 		46657452279A2FF7000D5E93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46657455279A2FF7000D5E93 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		46657461279A30A9000D5E93 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
-		46657468279AB713000D5E93 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		4665746C279AB730000D5E93 /* CustomSegmentedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -44,6 +46,22 @@
 				461BA302279AB8A700B58EBA /* AuthViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		461BA306279AF9B100B58EBA /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				461BA307279AF9B600B58EBA /* UI */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		461BA307279AF9B600B58EBA /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				461BA308279AF9C600B58EBA /* UIConstants.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		46657442279A2FF6000D5E93 = {
@@ -86,6 +104,8 @@
 		4665745C279A3082000D5E93 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				46D87D55279AFB8C005D0F15 /* Utils */,
+				461BA306279AF9B100B58EBA /* Constants */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -151,7 +171,7 @@
 		46657466279AB700000D5E93 /* NavigationBar */ = {
 			isa = PBXGroup;
 			children = (
-				46657468279AB713000D5E93 /* CustomNavigationBar.swift */,
+				461BA304279AF92A00B58EBA /* NavigationBar.swift */,
 			);
 			path = NavigationBar;
 			sourceTree = "<group>";
@@ -162,6 +182,21 @@
 				4665746C279AB730000D5E93 /* CustomSegmentedPicker.swift */,
 			);
 			path = SegmentedPicker;
+			sourceTree = "<group>";
+		};
+		46D87D55279AFB8C005D0F15 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				46D87D56279AFB96005D0F15 /* Components */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		46D87D56279AFB96005D0F15 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,7 +270,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				461BA303279AB8A700B58EBA /* AuthViewModel.swift in Sources */,
-				46657469279AB713000D5E93 /* CustomNavigationBar.swift in Sources */,
+				461BA305279AF92A00B58EBA /* NavigationBar.swift in Sources */,
+				461BA309279AF9C600B58EBA /* UIConstants.swift in Sources */,
 				46657462279A30A9000D5E93 /* AuthView.swift in Sources */,
 				4665744F279A2FF6000D5E93 /* StartApp.swift in Sources */,
 				4665746D279AB730000D5E93 /* CustomSegmentedPicker.swift in Sources */,
