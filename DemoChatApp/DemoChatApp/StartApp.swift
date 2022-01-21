@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct DemoChatAppApp: App {
+struct StartApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+         AuthView()
         }
     }
 }

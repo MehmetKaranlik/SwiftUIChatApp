@@ -7,18 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4665744F279A2FF6000D5E93 /* DemoChatAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665744E279A2FF6000D5E93 /* DemoChatAppApp.swift */; };
-		46657451279A2FF6000D5E93 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46657450279A2FF6000D5E93 /* ContentView.swift */; };
+		4665744F279A2FF6000D5E93 /* StartApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665744E279A2FF6000D5E93 /* StartApp.swift */; };
 		46657453279A2FF7000D5E93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46657452279A2FF7000D5E93 /* Assets.xcassets */; };
 		46657456279A2FF7000D5E93 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46657455279A2FF7000D5E93 /* Preview Assets.xcassets */; };
+		46657462279A30A9000D5E93 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46657461279A30A9000D5E93 /* AuthView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4665744B279A2FF6000D5E93 /* DemoChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4665744E279A2FF6000D5E93 /* DemoChatAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoChatAppApp.swift; sourceTree = "<group>"; };
-		46657450279A2FF6000D5E93 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4665744E279A2FF6000D5E93 /* StartApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartApp.swift; sourceTree = "<group>"; };
 		46657452279A2FF7000D5E93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46657455279A2FF7000D5E93 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		46657461279A30A9000D5E93 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +51,10 @@
 		4665744D279A2FF6000D5E93 /* DemoChatApp */ = {
 			isa = PBXGroup;
 			children = (
-				4665744E279A2FF6000D5E93 /* DemoChatAppApp.swift */,
-				46657450279A2FF6000D5E93 /* ContentView.swift */,
+				4665745E279A308F000D5E93 /* Product */,
+				4665745D279A308A000D5E93 /* View */,
+				4665745C279A3082000D5E93 /* Core */,
+				4665744E279A2FF6000D5E93 /* StartApp.swift */,
 				46657452279A2FF7000D5E93 /* Assets.xcassets */,
 				46657454279A2FF7000D5E93 /* Preview Content */,
 			);
@@ -65,6 +67,44 @@
 				46657455279A2FF7000D5E93 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4665745C279A3082000D5E93 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		4665745D279A308A000D5E93 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4665745F279A3098000D5E93 /* Auth */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4665745E279A308F000D5E93 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		4665745F279A3098000D5E93 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				46657460279A309D000D5E93 /* View */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		46657460279A309D000D5E93 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				46657461279A30A9000D5E93 /* AuthView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +177,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46657451279A2FF6000D5E93 /* ContentView.swift in Sources */,
-				4665744F279A2FF6000D5E93 /* DemoChatAppApp.swift in Sources */,
+				46657462279A30A9000D5E93 /* AuthView.swift in Sources */,
+				4665744F279A2FF6000D5E93 /* StartApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
