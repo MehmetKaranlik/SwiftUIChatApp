@@ -16,6 +16,7 @@ struct ObscuredTextField: View {
   SecureField(text: $bindingText, prompt: Text(promptText)) {
    Text(labelText)
   }
+  .textContentType(.password)
   .modifier(RoundedTextFieldModifier())
   .padding(.horizontal)
  }

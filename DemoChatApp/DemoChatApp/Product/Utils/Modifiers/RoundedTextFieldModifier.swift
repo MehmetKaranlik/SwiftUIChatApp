@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct RoundedTextFieldModifier: ViewModifier {
  func body(content: Content) -> some View {
@@ -15,6 +16,7 @@ struct RoundedTextFieldModifier: ViewModifier {
    .textFieldStyle(.plain)
    .padding(.horizontal)
    .padding(.vertical,5)
+
    .overlay(
     RoundedRectangle(cornerRadius: .infinity)
      .stroke(lineWidth: 3)

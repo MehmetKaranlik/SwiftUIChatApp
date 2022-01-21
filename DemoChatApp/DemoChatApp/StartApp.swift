@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
-
+import Firebase
 @main
 struct StartApp: App {
+ init() {
+  FirebaseApp.configure()
+ }
     var body: some Scene {
         WindowGroup {
          AuthView()

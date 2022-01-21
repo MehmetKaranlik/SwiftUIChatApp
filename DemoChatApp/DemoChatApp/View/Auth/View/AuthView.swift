@@ -14,7 +14,7 @@ struct AuthView: View {
 
 
 
-  // MARK:  body
+ // MARK:  body
  var body: some View {
   NavigationView {
    VStack(spacing:0) {
@@ -23,9 +23,10 @@ struct AuthView: View {
 
     CustomSegmentedPicker(isLogin: $viewModel.isLogin)
 
+
     DynamicVerticalSpacer(size: 40)
 
-    UploadImageButtonView(isLogin: $viewModel.isLogin,isAppear: $viewModel.isAppear, function: {print("123")}
+    UploadImageButtonView(isLogin: $viewModel.isLogin,isAppear: $viewModel.isAppear, function: {}
     )
 
     if !viewModel.isLogin {
@@ -49,11 +50,11 @@ struct AuthView: View {
      }
      Spacer()
      RoundedRectangleButton(buttonTitle: viewModel.isLogin ? "Login": "Register") {
-
+      buildAuthCallBack()
      }
      .padding(.top, viewModel.isLogin ? 50 : 0)
      Spacer()
-    }
+    }// MARK:  Vstack Expand
 
 
 
@@ -61,13 +62,24 @@ struct AuthView: View {
    .animationModifier(viewModel: viewModel)
    .navigationBarHidden(true)
   }
+  .navigationViewStyle(StackNavigationViewStyle())
 
 
  }// MARK:  body
 
 
+
+ fileprivate func buildAuthCallBack() {
+  if !viewModel.isLogin {
+   viewModel.createNewAccount()
+  }else {
+   viewModel.loginUser()
+  }
+ }
+
+
  fileprivate func buildUploadPhotoTitle() -> Text {
-  return Text("To upload a photo click icon above")
+  return Text("To upload a photo, click icon above")
    .foregroundColor(.green)
    .font(.body)
    .bold()
@@ -85,21 +97,31 @@ struct AuthView_Previews: PreviewProvider {
 
 
 fileprivate extension VStack {
+
+
  func animationModifier(viewModel : AuthViewModel) -> some View {
   self
    .onChange(of: viewModel.isLogin) { newValue in
+
     if newValue == false {
      viewModel.isAppear = false
      withAnimation(.easeInOut(duration: 1.5).repeatForever()) {
       viewModel.isAppear = true
      }
-    }else{
+
+    } else {
      viewModel.isAppear = false
      withAnimation(.easeInOut(duration: 1.5)) {
       viewModel.isAppear = true
      }
     }
-
+    viewModel.password.removeAll()
+    viewModel.email.removeAll()
+    viewModel.passwordConfirm.removeAll()
    }
+
+
  }
+
+
 }

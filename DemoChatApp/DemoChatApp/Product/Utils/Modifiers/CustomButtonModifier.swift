@@ -21,6 +21,7 @@ struct CustomButtonStyle: ButtonStyle {
    .blur(radius: UIConstants.blurRadius)
    .clipShape(RoundedRectangle(cornerRadius: .infinity))
    .opacity(configuration.isPressed ? 0.8 : 1)
+   .shadow(color: .black.opacity(0.5), radius: 5, x: 0, y: 10)
  }
 
 }

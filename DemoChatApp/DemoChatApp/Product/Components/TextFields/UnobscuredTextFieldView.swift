@@ -14,7 +14,9 @@ struct UnobscuredTextFieldView: View {
      TextField(text: $textBinding, prompt: Text(promptText)) {
       Text("Email")
      }
+     .textFieldModifier()
      .modifier(RoundedTextFieldModifier())
+
      .padding(.horizontal)
 
     }
@@ -30,3 +32,13 @@ struct UnobscuredTextFieldView_Previews: PreviewProvider {
 }
 
 
+fileprivate extension  TextField {
+ func textFieldModifier() -> some View {
+  self
+   .textCase(.lowercase)
+   .textSelection(.disabled)
+   .disableAutocorrection(true)
+   .textInputAutocapitalization(.never)
+   .textContentType(.emailAddress)
+ }
+}
