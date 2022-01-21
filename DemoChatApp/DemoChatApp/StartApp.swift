@@ -9,6 +9,7 @@ import SwiftUI
 import Firebase
 @main
 struct StartApp: App {
+
  init() {
   FirebaseApp.configure()
  }

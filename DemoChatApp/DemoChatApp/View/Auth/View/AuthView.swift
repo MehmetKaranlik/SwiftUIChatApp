@@ -26,8 +26,9 @@ struct AuthView: View {
 
     DynamicVerticalSpacer(size: 40)
 
-    UploadImageButtonView(isLogin: $viewModel.isLogin,isAppear: $viewModel.isAppear, function: {}
-    )
+    UploadImageButtonView(image: $viewModel.image, isLogin: $viewModel.isLogin, isAppear: $viewModel.isAppear) {
+     viewModel.isPresented.toggle()
+    }
 
     if !viewModel.isLogin {
      DynamicVerticalSpacer(size: 20)
@@ -62,7 +63,14 @@ struct AuthView: View {
    .animationModifier(viewModel: viewModel)
    .navigationBarHidden(true)
   }
-  .navigationViewStyle(StackNavigationViewStyle())
+  .navigationViewModifier()
+  .fullScreenCover(isPresented: $viewModel.isPresented, onDismiss:{
+   print(viewModel.image == nil)
+  }) {
+   ImagePicker(image: $viewModel.image)
+  }
+
+
 
 
  }// MARK:  body
@@ -79,12 +87,14 @@ struct AuthView: View {
 
 
  fileprivate func buildUploadPhotoTitle() -> Text {
-  return Text("To upload a photo, click icon above")
-   .foregroundColor(.green)
-   .font(.body)
-   .bold()
+
+  return Text(viewModel.image != nil ? "To change photo, click photo above": "To upload a photo, click icon above")
+    .foregroundColor(.green)
+    .font(.body)
+    .bold()
+  }
  }
-}
+
 
 
 
@@ -113,5 +123,14 @@ fileprivate extension VStack {
 
     viewModel.clearCredentials()
    }
+ }
+}
+
+
+fileprivate extension NavigationView {
+ func navigationViewModifier() -> some View {
+  self
+   .navigationViewStyle(StackNavigationViewStyle())
+
  }
 }

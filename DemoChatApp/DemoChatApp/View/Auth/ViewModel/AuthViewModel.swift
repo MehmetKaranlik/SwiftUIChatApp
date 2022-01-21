@@ -7,6 +7,7 @@
 
 import Foundation
 import Firebase
+import UIKit
 
 
 class AuthViewModel : ObservableObject {
@@ -19,11 +20,18 @@ class AuthViewModel : ObservableObject {
  }
 
 
+
+
+ // MARK:  Variables
+ // image variable
+ @Published var image : UIImage?
+
+
   // bools
 
  @Published  var isLogin : Bool = true
  @Published  var isAppear : Bool  = false
-
+ @Published  var isPresented : Bool = false
 
 
  // textfield variables
@@ -32,6 +40,10 @@ class AuthViewModel : ObservableObject {
  @Published var password : String = ""
  @Published var passwordConfirm : String = ""
 
+
+
+
+ // MARK:  Functions
 
  // Firebase Callbacks
  func createAccount() -> Void {

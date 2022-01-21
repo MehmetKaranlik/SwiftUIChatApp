@@ -6,8 +6,10 @@
  //
 
 import SwiftUI
+import UIKit
 
 struct UploadImageButtonView: View {
+ @Binding var image : UIImage?
  @Binding var isLogin : Bool
  @Binding var isAppear : Bool
  let function : () -> Void
@@ -21,10 +23,26 @@ struct UploadImageButtonView: View {
      self.function()
     }
    } label: {
-    Image(systemName: isLogin ? "message.circle.fill" :"photo.circle.fill")
-     .imageModifier()
-     .scaleEffect(isAppear ? 1 : 1 )
-     .disabled(isLogin ? true : false)
+    if isLogin {
+     Image(systemName: "message.circle.fill")
+      .imageModifier()
+      .scaleEffect(isAppear ? 1 : 1 )
+      .disabled(isLogin ? true : false)
+    }else {
+     if let image = self.image {
+      Image(uiImage: image)
+       .imageModifier()
+     }else {
+      Image(systemName: "photo.circle.fill")
+       .imageModifier()
+       .scaleEffect(isAppear ? 1 : 1 )
+       .disabled(isLogin ? true : false)
+     }
+
+    }
+
+
+
 
    }
    .buttonStyle(CustomUploadButtonStyle(isLogin: $isLogin))
@@ -36,7 +54,9 @@ struct UploadImageButtonView: View {
 
 struct UploadImageButtonView_Previews: PreviewProvider {
  static var previews: some View {
-  UploadImageButtonView(isLogin: .constant(true),isAppear: .constant(true), function: {print("123")})
+  UploadImageButtonView(image: .constant(nil), isLogin: .constant(false), isAppear: .constant(false)) {
+   print("123")
+  }
  }
 }
 
@@ -56,10 +76,11 @@ fileprivate extension Image {
  func imageModifier() -> some View {
   self
    .resizable()
-   .scaledToFit()
+   .scaledToFill()
    .frame(width: 90, height: 90, alignment: .center)
    .foregroundColor(.green)
    .blur(radius: UIConstants.blurRadius)
+   .clipShape(Circle())
  }
 }
 
