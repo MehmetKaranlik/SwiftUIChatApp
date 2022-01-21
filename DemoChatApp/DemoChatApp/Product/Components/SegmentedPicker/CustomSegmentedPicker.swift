@@ -11,8 +11,8 @@ struct CustomSegmentedPicker: View {
  @Binding var isLogin : Bool
     var body: some View {
      Picker(selection: $isLogin) {
-      Text("Login").tag(false)
-      Text("Register").tag(true)
+      Text("Login").tag(true)
+      Text("Register").tag(false)
      } label: {
       Text("")
      }

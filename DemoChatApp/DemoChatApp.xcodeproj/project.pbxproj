@@ -15,6 +15,14 @@
 		46657456279A2FF7000D5E93 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46657455279A2FF7000D5E93 /* Preview Assets.xcassets */; };
 		46657462279A30A9000D5E93 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46657461279A30A9000D5E93 /* AuthView.swift */; };
 		4665746D279AB730000D5E93 /* CustomSegmentedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665746C279AB730000D5E93 /* CustomSegmentedPicker.swift */; };
+		46D87D5B279AFC02005D0F15 /* UploadImageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D87D5A279AFC02005D0F15 /* UploadImageButtonView.swift */; };
+		46D87D5D279B0E0B005D0F15 /* DynamicVerticalSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D87D5C279B0E0B005D0F15 /* DynamicVerticalSpacer.swift */; };
+		46D87D60279B0E38005D0F15 /* DynamicHorizontalSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D87D5F279B0E38005D0F15 /* DynamicHorizontalSpacer.swift */; };
+		46D87D63279B1188005D0F15 /* UnobscuredTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D87D62279B1188005D0F15 /* UnobscuredTextFieldView.swift */; };
+		46D87D66279B1349005D0F15 /* RoundedTextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D87D65279B1349005D0F15 /* RoundedTextFieldModifier.swift */; };
+		46D87D68279B1547005D0F15 /* ObscuredTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D87D67279B1547005D0F15 /* ObscuredTextField.swift */; };
+		46D87D6B279B1FFF005D0F15 /* RoundedRectangleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D87D6A279B1FFF005D0F15 /* RoundedRectangleButton.swift */; };
+		46D87D6D279B22D6005D0F15 /* CustomButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D87D6C279B22D6005D0F15 /* CustomButtonModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +35,14 @@
 		46657455279A2FF7000D5E93 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		46657461279A30A9000D5E93 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		4665746C279AB730000D5E93 /* CustomSegmentedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedPicker.swift; sourceTree = "<group>"; };
+		46D87D5A279AFC02005D0F15 /* UploadImageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageButtonView.swift; sourceTree = "<group>"; };
+		46D87D5C279B0E0B005D0F15 /* DynamicVerticalSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicVerticalSpacer.swift; sourceTree = "<group>"; };
+		46D87D5F279B0E38005D0F15 /* DynamicHorizontalSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHorizontalSpacer.swift; sourceTree = "<group>"; };
+		46D87D62279B1188005D0F15 /* UnobscuredTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnobscuredTextFieldView.swift; sourceTree = "<group>"; };
+		46D87D65279B1349005D0F15 /* RoundedTextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextFieldModifier.swift; sourceTree = "<group>"; };
+		46D87D67279B1547005D0F15 /* ObscuredTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObscuredTextField.swift; sourceTree = "<group>"; };
+		46D87D6A279B1FFF005D0F15 /* RoundedRectangleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangleButton.swift; sourceTree = "<group>"; };
+		46D87D6C279B22D6005D0F15 /* CustomButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +163,8 @@
 		46657463279AB6E9000D5E93 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				46D87D61279B1170005D0F15 /* TextFields */,
+				46D87D58279AFBDC005D0F15 /* Buttons */,
 				4665746A279AB717000D5E93 /* SegmentedPicker */,
 				46657466279AB700000D5E93 /* NavigationBar */,
 			);
@@ -164,6 +182,7 @@
 		46657465279AB6F8000D5E93 /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
+				46D87D6C279B22D6005D0F15 /* CustomButtonModifier.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -187,6 +206,7 @@
 		46D87D55279AFB8C005D0F15 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				46D87D64279B132B005D0F15 /* Extensions */,
 				46D87D56279AFB96005D0F15 /* Components */,
 			);
 			path = Utils;
@@ -195,8 +215,52 @@
 		46D87D56279AFB96005D0F15 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				46D87D5C279B0E0B005D0F15 /* DynamicVerticalSpacer.swift */,
+				46D87D5F279B0E38005D0F15 /* DynamicHorizontalSpacer.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		46D87D58279AFBDC005D0F15 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				46D87D69279B1FDA005D0F15 /* RoundedRectangle */,
+				46D87D59279AFBE6005D0F15 /* UploadImageButton */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		46D87D59279AFBE6005D0F15 /* UploadImageButton */ = {
+			isa = PBXGroup;
+			children = (
+				46D87D5A279AFC02005D0F15 /* UploadImageButtonView.swift */,
+			);
+			path = UploadImageButton;
+			sourceTree = "<group>";
+		};
+		46D87D61279B1170005D0F15 /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				46D87D62279B1188005D0F15 /* UnobscuredTextFieldView.swift */,
+				46D87D67279B1547005D0F15 /* ObscuredTextField.swift */,
+			);
+			path = TextFields;
+			sourceTree = "<group>";
+		};
+		46D87D64279B132B005D0F15 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				46D87D65279B1349005D0F15 /* RoundedTextFieldModifier.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		46D87D69279B1FDA005D0F15 /* RoundedRectangle */ = {
+			isa = PBXGroup;
+			children = (
+				46D87D6A279B1FFF005D0F15 /* RoundedRectangleButton.swift */,
+			);
+			path = RoundedRectangle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,7 +335,15 @@
 			files = (
 				461BA303279AB8A700B58EBA /* AuthViewModel.swift in Sources */,
 				461BA305279AF92A00B58EBA /* NavigationBar.swift in Sources */,
+				46D87D68279B1547005D0F15 /* ObscuredTextField.swift in Sources */,
+				46D87D6B279B1FFF005D0F15 /* RoundedRectangleButton.swift in Sources */,
+				46D87D66279B1349005D0F15 /* RoundedTextFieldModifier.swift in Sources */,
+				46D87D6D279B22D6005D0F15 /* CustomButtonModifier.swift in Sources */,
 				461BA309279AF9C600B58EBA /* UIConstants.swift in Sources */,
+				46D87D5D279B0E0B005D0F15 /* DynamicVerticalSpacer.swift in Sources */,
+				46D87D63279B1188005D0F15 /* UnobscuredTextFieldView.swift in Sources */,
+				46D87D5B279AFC02005D0F15 /* UploadImageButtonView.swift in Sources */,
+				46D87D60279B0E38005D0F15 /* DynamicHorizontalSpacer.swift in Sources */,
 				46657462279A30A9000D5E93 /* AuthView.swift in Sources */,
 				4665744F279A2FF6000D5E93 /* StartApp.swift in Sources */,
 				4665746D279AB730000D5E93 /* CustomSegmentedPicker.swift in Sources */,

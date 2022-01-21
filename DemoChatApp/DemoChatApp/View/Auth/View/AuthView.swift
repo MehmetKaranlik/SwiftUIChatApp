@@ -1,36 +1,105 @@
-//
-//  AuthView.swift
-//  DemoChatApp
-//
-//  Created by mehmet karanlık on 21.01.2022.
-//
+ //
+ //  AuthView.swift
+ //  DemoChatApp
+ //
+ //  Created by mehmet karanlık on 21.01.2022.
+ //
 
 import SwiftUI
 
 struct AuthView: View {
- // MARK:  properties
+  // MARK:  properties
  @ObservedObject var viewModel : AuthViewModel = AuthViewModel()
 
 
- // MARK:  body
-    var body: some View {
-     NavigationView {
-      VStack(spacing:0) {
-       NavigationBarView(isLogin: $viewModel.isLogin)
-       CustomSegmentedPicker(isLogin: $viewModel.isLogin)
-       Spacer()
-      }
-      .navigationBarHidden(true)
-     }
 
+
+  // MARK:  body
+ var body: some View {
+  NavigationView {
+   VStack(spacing:0) {
+
+    NavigationBarView(isLogin: $viewModel.isLogin)
+
+    CustomSegmentedPicker(isLogin: $viewModel.isLogin)
+
+    DynamicVerticalSpacer(size: 40)
+
+    UploadImageButtonView(isLogin: $viewModel.isLogin,isAppear: $viewModel.isAppear, function: {print("123")}
+    )
+
+    if !viewModel.isLogin {
+     DynamicVerticalSpacer(size: 20)
+     buildUploadPhotoTitle()
     }
+    DynamicVerticalSpacer(size:viewModel.isLogin ? 80 : 40)
+
+    UnobscuredTextFieldView(textBinding: $viewModel.email, promptText: "E-mail")
+
+    DynamicVerticalSpacer(size: 10)
+
+    ObscuredTextField(bindingText: $viewModel.password, promptText: "Password", labelText: "Password")
+
+
+    VStack{
+     if !viewModel.isLogin {
+
+      DynamicVerticalSpacer(size: 10)
+      ObscuredTextField(bindingText: $viewModel.passwordConfirm, promptText: "Password Confirm", labelText: "Password Confirm")
+     }
+     Spacer()
+     RoundedRectangleButton(buttonTitle: viewModel.isLogin ? "Login": "Register") {
+
+     }
+     .padding(.top, viewModel.isLogin ? 50 : 0)
+     Spacer()
+    }
+
+
+
+   }
+   .animationModifier(viewModel: viewModel)
+   .navigationBarHidden(true)
+  }
+
+
+ }// MARK:  body
+
+
+ fileprivate func buildUploadPhotoTitle() -> Text {
+  return Text("To upload a photo click icon above")
+   .foregroundColor(.green)
+   .font(.body)
+   .bold()
+ }
 }
 
 
 
-// MARK:  preview
+ // MARK:  preview
 struct AuthView_Previews: PreviewProvider {
-    static var previews: some View {
-        AuthView()
+ static var previews: some View {
+  AuthView()
+ }
+}
+
+
+fileprivate extension VStack {
+ func animationModifier(viewModel : AuthViewModel) -> some View {
+  self
+   .onChange(of: viewModel.isLogin) { newValue in
+    if newValue == false {
+     viewModel.isAppear = false
+     withAnimation(.easeInOut(duration: 1.5).repeatForever()) {
+      viewModel.isAppear = true
+     }
+    }else{
+     viewModel.isAppear = false
+     withAnimation(.easeInOut(duration: 1.5)) {
+      viewModel.isAppear = true
+     }
     }
+
+   }
+ }
 }
