@@ -56,6 +56,14 @@ class AuthViewModel : ObservableObject {
   }
 
 
+
+ // util functions
+
+ func clearCredentials() {
+  viewModel.password.removeAll()
+  viewModel.email.removeAll()
+  viewModel.passwordConfirm.removeAll()
+ }
  
 
 }

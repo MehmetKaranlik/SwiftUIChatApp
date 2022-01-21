@@ -14,7 +14,7 @@ struct AuthView: View {
 
 
 
- // MARK:  body
+  // MARK:  body
  var body: some View {
   NavigationView {
    VStack(spacing:0) {
@@ -97,8 +97,6 @@ struct AuthView_Previews: PreviewProvider {
 
 
 fileprivate extension VStack {
-
-
  func animationModifier(viewModel : AuthViewModel) -> some View {
   self
    .onChange(of: viewModel.isLogin) { newValue in
@@ -107,21 +105,13 @@ fileprivate extension VStack {
      viewModel.isAppear = false
      withAnimation(.easeInOut(duration: 1.5).repeatForever()) {
       viewModel.isAppear = true
-     }
+     }} else {
+      viewModel.isAppear = false
+      withAnimation(.easeInOut(duration: 1.5)) {
+       viewModel.isAppear = true
+      }}
 
-    } else {
-     viewModel.isAppear = false
-     withAnimation(.easeInOut(duration: 1.5)) {
-      viewModel.isAppear = true
-     }
-    }
-    viewModel.password.removeAll()
-    viewModel.email.removeAll()
-    viewModel.passwordConfirm.removeAll()
+    viewModel.clearCredentials()
    }
-
-
  }
-
-
 }
