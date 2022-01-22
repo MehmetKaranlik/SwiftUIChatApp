@@ -23,6 +23,8 @@
 		46C314F9279C288A000FDB8C /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 46C314F8279C288A000FDB8C /* FirebaseAuth */; };
 		46C314FB279C288A000FDB8C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 46C314FA279C288A000FDB8C /* FirebaseFirestore */; };
 		46C314FD279C288A000FDB8C /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 46C314FC279C288A000FDB8C /* FirebaseStorage */; };
+		46C31501279C2AE3000FDB8C /* LocaleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C31500279C2AE3000FDB8C /* LocaleManager.swift */; };
+		46C31504279C3133000FDB8C /* LocaleKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C31503279C3133000FDB8C /* LocaleKeys.swift */; };
 		46D87D5B279AFC02005D0F15 /* UploadImageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D87D5A279AFC02005D0F15 /* UploadImageButtonView.swift */; };
 		46D87D5D279B0E0B005D0F15 /* DynamicVerticalSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D87D5C279B0E0B005D0F15 /* DynamicVerticalSpacer.swift */; };
 		46D87D60279B0E38005D0F15 /* DynamicHorizontalSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D87D5F279B0E38005D0F15 /* DynamicHorizontalSpacer.swift */; };
@@ -48,6 +50,8 @@
 		46C314F1279B560B000FDB8C /* AuthViewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewService.swift; sourceTree = "<group>"; };
 		46C314F3279B58ED000FDB8C /* AuthViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewProtocol.swift; sourceTree = "<group>"; };
 		46C314F5279B61A5000FDB8C /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		46C31500279C2AE3000FDB8C /* LocaleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleManager.swift; sourceTree = "<group>"; };
+		46C31503279C3133000FDB8C /* LocaleKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleKeys.swift; sourceTree = "<group>"; };
 		46D87D5A279AFC02005D0F15 /* UploadImageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageButtonView.swift; sourceTree = "<group>"; };
 		46D87D5C279B0E0B005D0F15 /* DynamicVerticalSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicVerticalSpacer.swift; sourceTree = "<group>"; };
 		46D87D5F279B0E38005D0F15 /* DynamicHorizontalSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHorizontalSpacer.swift; sourceTree = "<group>"; };
@@ -83,6 +87,7 @@
 		461BA306279AF9B100B58EBA /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				46C31502279C3126000FDB8C /* Enums */,
 				461BA307279AF9B600B58EBA /* UI */,
 			);
 			path = Constants;
@@ -240,9 +245,26 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		46C314FF279C2AC7000FDB8C /* LocaleManager */ = {
+			isa = PBXGroup;
+			children = (
+				46C31500279C2AE3000FDB8C /* LocaleManager.swift */,
+			);
+			path = LocaleManager;
+			sourceTree = "<group>";
+		};
+		46C31502279C3126000FDB8C /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				46C31503279C3133000FDB8C /* LocaleKeys.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		46D87D55279AFB8C005D0F15 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				46C314FF279C2AC7000FDB8C /* LocaleManager */,
 				46C314ED279B4A4B000FDB8C /* Helpers */,
 				46D87D64279B132B005D0F15 /* Extensions */,
 				46D87D56279AFB96005D0F15 /* Components */,
@@ -392,11 +414,13 @@
 				46D87D63279B1188005D0F15 /* UnobscuredTextFieldView.swift in Sources */,
 				46D87D5B279AFC02005D0F15 /* UploadImageButtonView.swift in Sources */,
 				46D87D60279B0E38005D0F15 /* DynamicHorizontalSpacer.swift in Sources */,
+				46C31501279C2AE3000FDB8C /* LocaleManager.swift in Sources */,
 				46657462279A30A9000D5E93 /* AuthView.swift in Sources */,
 				4665744F279A2FF6000D5E93 /* StartApp.swift in Sources */,
 				46C314F2279B560B000FDB8C /* AuthViewService.swift in Sources */,
 				4665746D279AB730000D5E93 /* CustomSegmentedPicker.swift in Sources */,
 				46C314F4279B58ED000FDB8C /* AuthViewProtocol.swift in Sources */,
+				46C31504279C3133000FDB8C /* LocaleKeys.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

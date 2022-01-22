@@ -11,5 +11,5 @@ import UIKit
 protocol AuthViewProtocol {
  func createNewAccount(email : String , password : String, passwordConfirm : String,image: UIImage?) -> Void
  func loginUser(email : String , password : String) -> Void
- func persistImageToStorage(uuid: String, image: UIImage?) -> Void
+ func persistImageToStorage(uuid: String, image: UIImage?, email : String, password : String) -> Void
 }
