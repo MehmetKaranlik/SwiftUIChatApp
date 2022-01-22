@@ -25,6 +25,8 @@
 		46C314FD279C288A000FDB8C /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 46C314FC279C288A000FDB8C /* FirebaseStorage */; };
 		46C31501279C2AE3000FDB8C /* LocaleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C31500279C2AE3000FDB8C /* LocaleManager.swift */; };
 		46C31504279C3133000FDB8C /* LocaleKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C31503279C3133000FDB8C /* LocaleKeys.swift */; };
+		46C3150A279C38D7000FDB8C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C31509279C38D7000FDB8C /* HomeView.swift */; };
+		46C3150D279C3AE9000FDB8C /* MessagePreviewTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C3150C279C3AE9000FDB8C /* MessagePreviewTile.swift */; };
 		46D87D5B279AFC02005D0F15 /* UploadImageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D87D5A279AFC02005D0F15 /* UploadImageButtonView.swift */; };
 		46D87D5D279B0E0B005D0F15 /* DynamicVerticalSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D87D5C279B0E0B005D0F15 /* DynamicVerticalSpacer.swift */; };
 		46D87D60279B0E38005D0F15 /* DynamicHorizontalSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D87D5F279B0E38005D0F15 /* DynamicHorizontalSpacer.swift */; };
@@ -33,6 +35,11 @@
 		46D87D68279B1547005D0F15 /* ObscuredTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D87D67279B1547005D0F15 /* ObscuredTextField.swift */; };
 		46D87D6B279B1FFF005D0F15 /* RoundedRectangleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D87D6A279B1FFF005D0F15 /* RoundedRectangleButton.swift */; };
 		46D87D6D279B22D6005D0F15 /* CustomButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D87D6C279B22D6005D0F15 /* CustomButtonModifier.swift */; };
+		46ECD433279C3EC900DE6F7A /* AsyncCircularAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46ECD432279C3EC900DE6F7A /* AsyncCircularAvatarView.swift */; };
+		46ECD436279C415900DE6F7A /* LoadingAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46ECD435279C415900DE6F7A /* LoadingAnimationView.swift */; };
+		46ECD439279C43E300DE6F7A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 46ECD438279C43E300DE6F7A /* Lottie */; };
+		46ECD43C279C474700DE6F7A /* avatarLoading.json in Resources */ = {isa = PBXBuildFile; fileRef = 46ECD43B279C474700DE6F7A /* avatarLoading.json */; };
+		46ECD43E279C474A00DE6F7A /* registerandlogin.json in Resources */ = {isa = PBXBuildFile; fileRef = 46ECD43D279C474A00DE6F7A /* registerandlogin.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +59,8 @@
 		46C314F5279B61A5000FDB8C /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		46C31500279C2AE3000FDB8C /* LocaleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleManager.swift; sourceTree = "<group>"; };
 		46C31503279C3133000FDB8C /* LocaleKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleKeys.swift; sourceTree = "<group>"; };
+		46C31509279C38D7000FDB8C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		46C3150C279C3AE9000FDB8C /* MessagePreviewTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagePreviewTile.swift; sourceTree = "<group>"; };
 		46D87D5A279AFC02005D0F15 /* UploadImageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageButtonView.swift; sourceTree = "<group>"; };
 		46D87D5C279B0E0B005D0F15 /* DynamicVerticalSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicVerticalSpacer.swift; sourceTree = "<group>"; };
 		46D87D5F279B0E38005D0F15 /* DynamicHorizontalSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHorizontalSpacer.swift; sourceTree = "<group>"; };
@@ -60,6 +69,10 @@
 		46D87D67279B1547005D0F15 /* ObscuredTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObscuredTextField.swift; sourceTree = "<group>"; };
 		46D87D6A279B1FFF005D0F15 /* RoundedRectangleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangleButton.swift; sourceTree = "<group>"; };
 		46D87D6C279B22D6005D0F15 /* CustomButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonModifier.swift; sourceTree = "<group>"; };
+		46ECD432279C3EC900DE6F7A /* AsyncCircularAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncCircularAvatarView.swift; sourceTree = "<group>"; };
+		46ECD435279C415900DE6F7A /* LoadingAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimationView.swift; sourceTree = "<group>"; };
+		46ECD43B279C474700DE6F7A /* avatarLoading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = avatarLoading.json; sourceTree = "<group>"; };
+		46ECD43D279C474A00DE6F7A /* registerandlogin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = registerandlogin.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +83,7 @@
 				46C314F9279C288A000FDB8C /* FirebaseAuth in Frameworks */,
 				46C314FB279C288A000FDB8C /* FirebaseFirestore in Frameworks */,
 				46C314FD279C288A000FDB8C /* FirebaseStorage in Frameworks */,
+				46ECD439279C43E300DE6F7A /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +134,7 @@
 		4665744D279A2FF6000D5E93 /* DemoChatApp */ = {
 			isa = PBXGroup;
 			children = (
+				46ECD43A279C472E00DE6F7A /* AnimationFiles */,
 				4665745E279A308F000D5E93 /* Product */,
 				4665745D279A308A000D5E93 /* View */,
 				4665745C279A3082000D5E93 /* Core */,
@@ -151,6 +166,7 @@
 		4665745D279A308A000D5E93 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				46C31505279C38A9000FDB8C /* Home */,
 				4665745F279A3098000D5E93 /* Auth */,
 			);
 			path = View;
@@ -186,6 +202,8 @@
 		46657463279AB6E9000D5E93 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				46C3150E279C3E8C000FDB8C /* ImageLoaders */,
+				46C3150B279C3AD6000FDB8C /* Tiles */,
 				46D87D61279B1170005D0F15 /* TextFields */,
 				46D87D58279AFBDC005D0F15 /* Buttons */,
 				4665746A279AB717000D5E93 /* Pickers */,
@@ -197,6 +215,7 @@
 		46657464279AB6EF000D5E93 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				46ECD434279C414000DE6F7A /* Views */,
 				46657465279AB6F8000D5E93 /* Modifiers */,
 			);
 			path = Utils;
@@ -261,6 +280,54 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
+		46C31505279C38A9000FDB8C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				46C31508279C38C3000FDB8C /* ViewModel */,
+				46C31507279C38B8000FDB8C /* Service */,
+				46C31506279C38B4000FDB8C /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		46C31506279C38B4000FDB8C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				46C31509279C38D7000FDB8C /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		46C31507279C38B8000FDB8C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		46C31508279C38C3000FDB8C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		46C3150B279C3AD6000FDB8C /* Tiles */ = {
+			isa = PBXGroup;
+			children = (
+				46C3150C279C3AE9000FDB8C /* MessagePreviewTile.swift */,
+			);
+			path = Tiles;
+			sourceTree = "<group>";
+		};
+		46C3150E279C3E8C000FDB8C /* ImageLoaders */ = {
+			isa = PBXGroup;
+			children = (
+				46ECD432279C3EC900DE6F7A /* AsyncCircularAvatarView.swift */,
+			);
+			path = ImageLoaders;
+			sourceTree = "<group>";
+		};
 		46D87D55279AFB8C005D0F15 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,6 +389,23 @@
 			path = RoundedRectangle;
 			sourceTree = "<group>";
 		};
+		46ECD434279C414000DE6F7A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				46ECD435279C415900DE6F7A /* LoadingAnimationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		46ECD43A279C472E00DE6F7A /* AnimationFiles */ = {
+			isa = PBXGroup;
+			children = (
+				46ECD43D279C474A00DE6F7A /* registerandlogin.json */,
+				46ECD43B279C474700DE6F7A /* avatarLoading.json */,
+			);
+			path = AnimationFiles;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -342,6 +426,7 @@
 				46C314F8279C288A000FDB8C /* FirebaseAuth */,
 				46C314FA279C288A000FDB8C /* FirebaseFirestore */,
 				46C314FC279C288A000FDB8C /* FirebaseStorage */,
+				46ECD438279C43E300DE6F7A /* Lottie */,
 			);
 			productName = DemoChatApp;
 			productReference = 4665744B279A2FF6000D5E93 /* DemoChatApp.app */;
@@ -373,6 +458,7 @@
 			mainGroup = 46657442279A2FF6000D5E93;
 			packageReferences = (
 				46C314F7279C288A000FDB8C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				46ECD437279C43E300DE6F7A /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 4665744C279A2FF6000D5E93 /* Products */;
 			projectDirPath = "";
@@ -391,6 +477,8 @@
 				46657456279A2FF7000D5E93 /* Preview Assets.xcassets in Resources */,
 				46657453279A2FF7000D5E93 /* Assets.xcassets in Resources */,
 				46C314EC279B46CE000FDB8C /* GoogleService-Info.plist in Resources */,
+				46ECD43C279C474700DE6F7A /* avatarLoading.json in Resources */,
+				46ECD43E279C474A00DE6F7A /* registerandlogin.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,7 +495,10 @@
 				46C314F6279B61A5000FDB8C /* ImagePicker.swift in Sources */,
 				46D87D6B279B1FFF005D0F15 /* RoundedRectangleButton.swift in Sources */,
 				46D87D66279B1349005D0F15 /* RoundedTextFieldModifier.swift in Sources */,
+				46ECD436279C415900DE6F7A /* LoadingAnimationView.swift in Sources */,
+				46C3150D279C3AE9000FDB8C /* MessagePreviewTile.swift in Sources */,
 				46C314EF279B4A68000FDB8C /* AuthValidator.swift in Sources */,
+				46ECD433279C3EC900DE6F7A /* AsyncCircularAvatarView.swift in Sources */,
 				46D87D6D279B22D6005D0F15 /* CustomButtonModifier.swift in Sources */,
 				461BA309279AF9C600B58EBA /* UIConstants.swift in Sources */,
 				46D87D5D279B0E0B005D0F15 /* DynamicVerticalSpacer.swift in Sources */,
@@ -416,6 +507,7 @@
 				46D87D60279B0E38005D0F15 /* DynamicHorizontalSpacer.swift in Sources */,
 				46C31501279C2AE3000FDB8C /* LocaleManager.swift in Sources */,
 				46657462279A30A9000D5E93 /* AuthView.swift in Sources */,
+				46C3150A279C38D7000FDB8C /* HomeView.swift in Sources */,
 				4665744F279A2FF6000D5E93 /* StartApp.swift in Sources */,
 				46C314F2279B560B000FDB8C /* AuthViewService.swift in Sources */,
 				4665746D279AB730000D5E93 /* CustomSegmentedPicker.swift in Sources */,
@@ -550,6 +642,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_ASSET_PATHS = "\"DemoChatApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 348T9RAC33;
 				ENABLE_PREVIEWS = YES;
@@ -579,6 +672,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_ASSET_PATHS = "\"DemoChatApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 348T9RAC33;
 				ENABLE_PREVIEWS = YES;
@@ -633,6 +727,14 @@
 				minimumVersion = 8.0.0;
 			};
 		};
+		46ECD437279C43E300DE6F7A /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -650,6 +752,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 46C314F7279C288A000FDB8C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		46ECD438279C43E300DE6F7A /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 46ECD437279C43E300DE6F7A /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -28,7 +28,7 @@ class AuthViewModel : ObservableObject {
 
 
   // bools
-
+ @Published var isLoading : Bool = false
  @Published  var isLogin : Bool = true
  @Published  var isAppear : Bool  = false
  @Published  var isPresented : Bool = false
@@ -46,12 +46,19 @@ class AuthViewModel : ObservableObject {
  // MARK:  Functions
 
  // Firebase Callbacks
- func createAccount() -> Void {
-  service.createNewAccount(email: self.email, password: self.password, passwordConfirm: self.passwordConfirm,image: self.image ?? nil)
+ func createAccount()   -> Void {
+  self.isLoading = true
+   service.createNewAccount(email: self.email, password: self.password, passwordConfirm: self.passwordConfirm, image: image, completionHandler: {
+   self.isLoading = false
+  })
+
  }
 
- func loginUser() -> Void {
-  service.loginUser(email: self.email, password: self.password)
+ func loginUser()  -> Void {
+  self.isLoading = true
+   service.loginUser(email: email, password: password) {
+   self.isLoading = false
+  }
  }
 
 

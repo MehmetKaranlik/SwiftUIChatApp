@@ -11,6 +11,7 @@ import Firebase
 import FirebaseFirestore
 
 
+typealias CompletionHandler =  () ->  Void
 struct AuthViewService : AuthViewProtocol {
 
  static let shared = AuthViewService()
@@ -20,20 +21,22 @@ struct AuthViewService : AuthViewProtocol {
 
 
  // MARK: creatin new account with validation
- func createNewAccount(email: String, password: String, passwordConfirm: String, image: UIImage?) {
+ func createNewAccount(email: String, password: String, passwordConfirm: String, image: UIImage?,  completionHandler : @escaping CompletionHandler) {
+
   if AuthValidator.shared.createAccountValidator(
    email: email, password: password, passConfirm: passwordConfirm) {
    Auth.auth().createUser(withEmail: email, password: password) { result, err in
     if let error = err {
+     completionHandler()
      print("Failed to create user : \(error)")
     }else {
      print("Successfully created user : \(result?.user.uid ?? "")")
      guard let uuid : String = result?.user.uid else {return}
      persistImageToStorage(uuid: uuid, image: image, email: email,password: password)
-
-
+     completionHandler()
     }
    }
+
   }else {
    print("Not validated to create account")
   }
@@ -78,16 +81,18 @@ struct AuthViewService : AuthViewProtocol {
  }
 
   // MARK: signing in with validation
- func loginUser(email : String , password : String) {
+ func loginUser(email : String , password : String, completionHandler :@escaping CompletionHandler) {
   if AuthValidator.shared.loginValidator(email: email, password: password) {
    Auth.auth().signIn(withEmail: email, password: password) { result, error in
     if let error = error {
      print("Failed to login : \(error)")
+     completionHandler()
     }else {
      print("Succesfully logged in : \(result?.user.uid ?? "")")
      LocaleManager.shared.setStringValue(key: LocaleKeys.userUid, value: result?.user.uid ?? "")
      LocaleManager.shared.setStringValue(key: LocaleKeys.userPassword, value: password)
      LocaleManager.shared.setStringValue(key: LocaleKeys.email, value: email)
+     completionHandler()
     }
    }
   }else {
