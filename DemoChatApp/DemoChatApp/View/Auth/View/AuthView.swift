@@ -76,7 +76,7 @@ struct AuthView: View {
     ObscuredTextField(bindingText: $viewModel.passwordConfirm, promptText: "Password Confirm", labelText: "Password Confirm")
    }
    Spacer()
-   RoundedRectangleButton(buttonTitle: viewModel.isLogin ? "Login": "Register") {
+   RoundedRectangleButton(width: 200, height: 40, foregroundColor: .white, backgroundColor: .green, opacity: 1, shadowApplied: true, buttonTitle:  viewModel.isLogin ? "Login": "Register") {
     buildAuthCallBack()
    }
    .padding(.top, viewModel.isLogin ? 50 : 0)

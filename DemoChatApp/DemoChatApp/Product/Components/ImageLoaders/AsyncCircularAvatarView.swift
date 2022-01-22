@@ -10,6 +10,7 @@ import SwiftUI
 struct AsyncCircularAvatarView: View {
  // MARK:  properties
  let userImageUrl : URL?
+ let radius : CGFloat
 
 
 
@@ -18,7 +19,7 @@ struct AsyncCircularAvatarView: View {
  var body: some View {
   ZStack(alignment: .center) {
    Circle()
-    .circleModifier()
+    .circleModifier(radius: self.radius)
      buildAsyncImageAndPlaceholder()
   }
 }
@@ -33,10 +34,10 @@ struct AsyncCircularAvatarView: View {
    if phase.image != nil {
     let image = phase.image
     image!
-     .imageModifier()
+     .imageModifier(radius:self.radius)
    } else {
     LoadingAnimationView(fileName: "avatarLoading" )
-        .frame(width: 60, height: 60, alignment: .center)
+        .frame(width: radius , height: radius, alignment: .center)
    }
   }
   .clipShape(Circle())
@@ -46,27 +47,27 @@ struct AsyncCircularAvatarView: View {
 
 struct AsyncCircularAvatar_Previews: PreviewProvider {
     static var previews: some View {
-        AsyncCircularAvatarView(userImageUrl: nil)
+        AsyncCircularAvatarView(userImageUrl: nil, radius: 30)
     }
 }
 
 
 fileprivate extension Circle {
- func circleModifier() -> some View {
+ func circleModifier(radius:CGFloat) -> some View {
   self
    .stroke(lineWidth: 2)
-   .frame(width: 60, height: 60, alignment: .center)
+   .frame(width: radius, height: radius, alignment: .center)
    .foregroundColor(.green)
    .blur(radius: UIConstants.blurRadius)
  }
 }
 
 fileprivate extension Image {
- func imageModifier() -> some View {
+ func imageModifier(radius : CGFloat) -> some View {
   self
    .resizable()
    .scaledToFill()
-   .frame(width: 50, height: 50, alignment: .center)
+   .frame(width: radius-10, height: radius-10, alignment: .center)
 
 
  }

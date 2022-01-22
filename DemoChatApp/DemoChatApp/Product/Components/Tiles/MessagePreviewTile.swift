@@ -18,23 +18,36 @@ struct MessagePreviewTile: View {
 
 
 // MARK:  body
+
+
  var body: some View {
 
-     HStack(alignment:.top ,spacing:0) {
-      DynamicHorizontalSpacer(size: 10)
-      AsyncCircularAvatarView(userImageUrl: self.userImageUrl)
-      DynamicHorizontalSpacer(size: 20)
-      VStack(alignment: .leading, spacing: 0) {
-       buildUserInfo()
-       DynamicVerticalSpacer(size: 5)
-       buildMessageText()
-      }
-      Spacer()
-      Text("34d")
-      DynamicHorizontalSpacer(size: 10)
-     }
-     .padding(.horizontal, 5)
+  VStack {
+   buildTileBody()
+   .padding(.horizontal, 5)
+  }
+  .background(Color.gray.opacity(0.02))
+  .padding(.vertical,2)
     }
+
+
+
+ fileprivate func buildTileBody() -> some View {
+  return HStack(alignment:.top ,spacing:0) {
+   DynamicHorizontalSpacer(size: 10)
+   AsyncCircularAvatarView(userImageUrl: self.userImageUrl, radius: 60)
+   DynamicHorizontalSpacer(size: 20)
+   VStack(alignment: .leading, spacing: 0) {
+    buildUserInfo()
+    DynamicVerticalSpacer(size: 5)
+    buildMessageText()
+   }
+   Spacer()
+   Text("34d")
+   DynamicHorizontalSpacer(size: 10)
+  }
+
+ }
 
 
  fileprivate func buildMessageText() -> some View {

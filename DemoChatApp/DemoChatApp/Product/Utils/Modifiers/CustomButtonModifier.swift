@@ -11,17 +11,24 @@ import SwiftUI
 
 struct CustomButtonStyle: ButtonStyle {
  // MARK:  properties
+ let width : CGFloat
+ let height : CGFloat
+ let foregroundColor : Color?
+ let backgroundColor : Color?
+ let opacity : Double
+ let shadowApplied : Bool
+
 
  // MARK:  body
  func makeBody(configuration: Configuration) -> some View {
   configuration.label
-   .foregroundColor(.white)
-   .frame(width:configuration.isPressed ? 180: 200, height: configuration.isPressed ? 45 :50, alignment: .center)
-   .background(Color.green)
+   .foregroundColor(foregroundColor ?? .white)
+   .frame(width:configuration.isPressed ? width*0.8: width, height: configuration.isPressed ? height*0.9 :height, alignment: .center)
+   .background(backgroundColor ?? Color.green)
    .blur(radius: UIConstants.blurRadius)
    .clipShape(RoundedRectangle(cornerRadius: .infinity))
-   .opacity(configuration.isPressed ? 0.8 : 1)
-   .shadow(color: .black.opacity(0.5), radius: 5, x: 0, y: 10)
+   .opacity(configuration.isPressed ? opacity*0.8 : opacity)
+   .shadow(color: .black.opacity(shadowApplied ? 0.5 : 0), radius: shadowApplied ? 5 : 0, x: 0, y:  shadowApplied ? 10 : 0)
  }
 
 }
