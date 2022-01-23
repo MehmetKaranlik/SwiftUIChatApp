@@ -15,8 +15,6 @@ struct HomeView: View {
  
  
   // MARK:  body
- 
- 
  var body: some View {
   NavigationView {
    
@@ -38,6 +36,7 @@ struct HomeView: View {
    
    
   }
+  .navigationViewStyle(StackNavigationViewStyle())
   
   
   
@@ -79,7 +78,11 @@ fileprivate extension ZStack  {
   self
    .navigationTitle("Messages")
    .navigationBarTitleDisplayMode(.automatic)
-   .navigationBarItems(leading: AsyncCircularAvatarView(userImageUrl: nil, radius: 40), trailing: buildTrailingButton(viewModel: viewModel))
+   .navigationBarItems(leading: HStack{
+    AsyncCircularAvatarView(userImageUrl: URL(string: viewModel.user.userImageUrl), radius: 40)
+
+    Text(viewModel.user.userName)
+   }, trailing: buildTrailingButton(viewModel: viewModel))
    .ignoresSafeArea(edges: .bottom)
  }
  

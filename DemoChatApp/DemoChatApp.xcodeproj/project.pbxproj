@@ -36,6 +36,9 @@
 		46D87D68279B1547005D0F15 /* ObscuredTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D87D67279B1547005D0F15 /* ObscuredTextField.swift */; };
 		46D87D6B279B1FFF005D0F15 /* RoundedRectangleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D87D6A279B1FFF005D0F15 /* RoundedRectangleButton.swift */; };
 		46D87D6D279B22D6005D0F15 /* CustomButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D87D6C279B22D6005D0F15 /* CustomButtonModifier.swift */; };
+		46D9ABD2279CD33700CAC8AB /* IHomeViewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D9ABD1279CD33700CAC8AB /* IHomeViewService.swift */; };
+		46D9ABD4279CD38A00CAC8AB /* HomeViewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D9ABD3279CD38A00CAC8AB /* HomeViewService.swift */; };
+		46D9ABD7279CE0F700CAC8AB /* CurrentUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D9ABD6279CE0F700CAC8AB /* CurrentUserModel.swift */; };
 		46ECD433279C3EC900DE6F7A /* AsyncCircularAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46ECD432279C3EC900DE6F7A /* AsyncCircularAvatarView.swift */; };
 		46ECD436279C415900DE6F7A /* LoadingAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46ECD435279C415900DE6F7A /* LoadingAnimationView.swift */; };
 		46ECD439279C43E300DE6F7A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 46ECD438279C43E300DE6F7A /* Lottie */; };
@@ -71,6 +74,9 @@
 		46D87D67279B1547005D0F15 /* ObscuredTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObscuredTextField.swift; sourceTree = "<group>"; };
 		46D87D6A279B1FFF005D0F15 /* RoundedRectangleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangleButton.swift; sourceTree = "<group>"; };
 		46D87D6C279B22D6005D0F15 /* CustomButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonModifier.swift; sourceTree = "<group>"; };
+		46D9ABD1279CD33700CAC8AB /* IHomeViewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IHomeViewService.swift; sourceTree = "<group>"; };
+		46D9ABD3279CD38A00CAC8AB /* HomeViewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewService.swift; sourceTree = "<group>"; };
+		46D9ABD6279CE0F700CAC8AB /* CurrentUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserModel.swift; sourceTree = "<group>"; };
 		46ECD432279C3EC900DE6F7A /* AsyncCircularAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncCircularAvatarView.swift; sourceTree = "<group>"; };
 		46ECD435279C415900DE6F7A /* LoadingAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimationView.swift; sourceTree = "<group>"; };
 		46ECD43B279C474700DE6F7A /* avatarLoading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = avatarLoading.json; sourceTree = "<group>"; };
@@ -285,6 +291,7 @@
 		46C31505279C38A9000FDB8C /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				46D9ABD5279CE0E900CAC8AB /* Model */,
 				46C31508279C38C3000FDB8C /* ViewModel */,
 				46C31507279C38B8000FDB8C /* Service */,
 				46C31506279C38B4000FDB8C /* View */,
@@ -303,6 +310,8 @@
 		46C31507279C38B8000FDB8C /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				46D9ABD1279CD33700CAC8AB /* IHomeViewService.swift */,
+				46D9ABD3279CD38A00CAC8AB /* HomeViewService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -390,6 +399,14 @@
 				46D87D6A279B1FFF005D0F15 /* RoundedRectangleButton.swift */,
 			);
 			path = RoundedRectangle;
+			sourceTree = "<group>";
+		};
+		46D9ABD5279CE0E900CAC8AB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				46D9ABD6279CE0F700CAC8AB /* CurrentUserModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		46ECD434279C414000DE6F7A /* Views */ = {
@@ -493,6 +510,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				461BA303279AB8A700B58EBA /* AuthViewModel.swift in Sources */,
+				46D9ABD2279CD33700CAC8AB /* IHomeViewService.swift in Sources */,
 				461BA305279AF92A00B58EBA /* NavigationBar.swift in Sources */,
 				46D87D68279B1547005D0F15 /* ObscuredTextField.swift in Sources */,
 				46B37287279C9B6700AC5994 /* HomeViewModel.swift in Sources */,
@@ -510,6 +528,8 @@
 				46D87D5B279AFC02005D0F15 /* UploadImageButtonView.swift in Sources */,
 				46D87D60279B0E38005D0F15 /* DynamicHorizontalSpacer.swift in Sources */,
 				46C31501279C2AE3000FDB8C /* LocaleManager.swift in Sources */,
+				46D9ABD4279CD38A00CAC8AB /* HomeViewService.swift in Sources */,
+				46D9ABD7279CE0F700CAC8AB /* CurrentUserModel.swift in Sources */,
 				46657462279A30A9000D5E93 /* AuthView.swift in Sources */,
 				46C3150A279C38D7000FDB8C /* HomeView.swift in Sources */,
 				4665744F279A2FF6000D5E93 /* StartApp.swift in Sources */,

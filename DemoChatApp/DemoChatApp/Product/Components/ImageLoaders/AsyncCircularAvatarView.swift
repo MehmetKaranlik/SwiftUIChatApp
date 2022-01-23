@@ -59,6 +59,7 @@ fileprivate extension Circle {
    .frame(width: radius, height: radius, alignment: .center)
    .foregroundColor(.green)
    .blur(radius: UIConstants.blurRadius)
+   .shadow(radius: 5)
  }
 }
 

@@ -10,10 +10,10 @@ import SwiftUI
 
 
 struct LocaleManager {
-
+ let defaults : UserDefaults
 static let shared : LocaleManager = LocaleManager()
  private init() {
-
+  defaults = UserDefaults.standard
  }
 
 
@@ -41,17 +41,17 @@ static let shared : LocaleManager = LocaleManager()
 
 // getters
  func getStringValue(key : LocaleKeys) -> String {
-  guard let temp : String = (UserDefaults.value(forKey: key.key) as? String)  else {return ""}
+  let temp : String = defaults.string(forKey: key.key)!
   return temp
  }
 
  func getIntValue(key : LocaleKeys) -> Int {
-  guard let temp : Int = (UserDefaults.value(forKey: key.key) as? Int)  else {return 0}
+  let temp : Int = defaults.integer(forKey: key.key)
   return temp
  }
 
  func getBoolValue(key : LocaleKeys) -> Bool {
-  guard let temp : Bool = (UserDefaults.value(forKey: key.key) as? Bool)  else {return false}
+  let temp : Bool = defaults.bool(forKey: key.key)
   return temp
  }
 

@@ -12,6 +12,7 @@ enum LocaleKeys : CaseIterable {
  case userUid
  case email
  case userPassword
+ case username
 
 
  var key : String  {
@@ -19,6 +20,7 @@ enum LocaleKeys : CaseIterable {
    case .email : return "userName"
    case .userUid : return "userUid"
    case .userPassword : return "userPassword"
+   case .username : return "username"
   }
  }
 }

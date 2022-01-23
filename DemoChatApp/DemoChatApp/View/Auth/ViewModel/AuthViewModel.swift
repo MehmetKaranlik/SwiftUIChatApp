@@ -13,9 +13,11 @@ import UIKit
 class AuthViewModel : ObservableObject {
 // MARK:  instances
  let service : AuthViewService
+ let localeManager : LocaleManager
 
 
  init() {
+  localeManager = LocaleManager.shared
   service = AuthViewService.shared
  }
 
@@ -55,9 +57,13 @@ class AuthViewModel : ObservableObject {
  }
 
  func loginUser()  -> Void {
+  let range = self.email.range(of: "@")?.lowerBound
+  let cacheData = String(email.prefix(upTo: range!))
   self.isLoading = true
    service.loginUser(email: email, password: password) {
-   self.isLoading = false
+    self.localeManager.setStringValue(key: LocaleKeys.username, value: cacheData)
+    print("Logged-in and username cached")
+    self.isLoading = false
   }
  }
 
