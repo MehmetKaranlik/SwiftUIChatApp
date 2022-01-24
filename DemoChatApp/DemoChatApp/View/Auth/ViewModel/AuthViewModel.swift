@@ -58,7 +58,7 @@ class AuthViewModel : ObservableObject {
 
  func loginUser()  -> Void {
   let range = self.email.range(of: "@")?.lowerBound
-  let cacheData = String(email.prefix(upTo: range!))
+  let cacheData = String(email.prefix(upTo: range ?? String.Index(utf16Offset: 5, in: "asdadsadasd")))
   self.isLoading = true
    service.loginUser(email: email, password: password) {
     self.localeManager.setStringValue(key: LocaleKeys.username, value: cacheData)

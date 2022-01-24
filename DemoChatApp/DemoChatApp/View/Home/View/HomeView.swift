@@ -28,14 +28,12 @@ struct HomeView: View {
     .padding(.bottom ,20)
    }
    .navigationBarModifiers(viewModel: self.viewModel)
-   .actionSheet(isPresented: $viewModel.isSheetPresented) {
-    ActionSheet(title: Text("Settings"), message: Text("What do you want to do ?"),buttons: [ .destructive(Text("Sign-out"),action: {}), .cancel()
-                                                                                            ]
-    )
-   }
+
+
    
    
   }
+
   .navigationViewStyle(StackNavigationViewStyle())
   
   
@@ -88,13 +86,14 @@ fileprivate extension ZStack  {
  
  
  func buildTrailingButton(viewModel : HomeViewModel) -> some View {
-  return Button(action: {
-   viewModel.isSheetPresented.toggle()
-  }, label: {
+  return NavigationLink {
+   SettingsView()
+  } label: {
    Image(systemName: "gear")
     .font(.system(size: 24, weight: .bold))
     .foregroundColor(.green)
     .blur(radius: UIConstants.blurRadius)
-  })
+  }
+
  }
 }

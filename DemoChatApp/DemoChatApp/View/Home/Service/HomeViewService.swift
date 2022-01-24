@@ -13,7 +13,7 @@ import FirebaseFirestore
 
 
 
-struct HomeViewService : IHomeViewService {
+struct HomeViewService : HomeViewProtocol {
 
  var auth: Auth
  var firestore: Firestore
@@ -42,6 +42,18 @@ struct HomeViewService : IHomeViewService {
    completionHandler(snapshot,error)
   }
 
+
+ }
+
+
+ func getUserLogout(completionHandler: @escaping CompletionHandler) {
+  do {
+  try auth.signOut()
+  completionHandler()
+  }
+  catch {
+   print("Error logging out")
+  }
 
  }
 }

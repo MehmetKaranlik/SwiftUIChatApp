@@ -55,4 +55,11 @@ class HomeViewModel : ObservableObject {
 
 
 
+ func getUserLogOut() -> Void {
+  service.getUserLogout {
+   self.localeManager.clearAllCaches()
+  }
+
+ }
+
 }
