@@ -45,15 +45,5 @@ struct HomeViewService : HomeViewProtocol {
 
  }
 
-
- func getUserLogout(completionHandler: @escaping CompletionHandler) {
-  do {
-  try auth.signOut()
-  completionHandler()
-  }
-  catch {
-   print("Error logging out")
-  }
-
  }
-}
+

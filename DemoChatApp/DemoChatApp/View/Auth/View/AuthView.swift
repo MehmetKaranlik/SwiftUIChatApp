@@ -30,7 +30,7 @@ struct AuthView: View {
 
      DynamicVerticalSpacer(size: 40)
 
-     UploadImageButtonView(image: $viewModel.image, isLogin: $viewModel.isLogin, isAppear: $viewModel.isAppear) {
+     UploadImageButtonView(image: $viewModel.image, isLogin: $viewModel.isLogin, isAppear: $viewModel.isAppear,size: 150) {
       viewModel.isPresented.toggle()
      }
 

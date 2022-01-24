@@ -45,6 +45,9 @@
 		46ECD43C279C474700DE6F7A /* avatarLoading.json in Resources */ = {isa = PBXBuildFile; fileRef = 46ECD43B279C474700DE6F7A /* avatarLoading.json */; };
 		46ECD43E279C474A00DE6F7A /* registerandlogin.json in Resources */ = {isa = PBXBuildFile; fileRef = 46ECD43D279C474A00DE6F7A /* registerandlogin.json */; };
 		46FCBE77279E2BF100BC045F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FCBE76279E2BF100BC045F /* SettingsView.swift */; };
+		46FCBE79279E2D5E00BC045F /* SettingsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FCBE78279E2D5E00BC045F /* SettingsViewProtocol.swift */; };
+		46FCBE7B279EA04B00BC045F /* SimpleUploadButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FCBE7A279EA04B00BC045F /* SimpleUploadButtonView.swift */; };
+		46FCBE7D279EA47B00BC045F /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FCBE7C279EA47B00BC045F /* SettingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +86,9 @@
 		46ECD43B279C474700DE6F7A /* avatarLoading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = avatarLoading.json; sourceTree = "<group>"; };
 		46ECD43D279C474A00DE6F7A /* registerandlogin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = registerandlogin.json; sourceTree = "<group>"; };
 		46FCBE76279E2BF100BC045F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		46FCBE78279E2D5E00BC045F /* SettingsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewProtocol.swift; sourceTree = "<group>"; };
+		46FCBE7A279EA04B00BC045F /* SimpleUploadButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleUploadButtonView.swift; sourceTree = "<group>"; };
+		46FCBE7C279EA47B00BC045F /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -376,6 +382,7 @@
 			isa = PBXGroup;
 			children = (
 				46D87D5A279AFC02005D0F15 /* UploadImageButtonView.swift */,
+				46FCBE7A279EA04B00BC045F /* SimpleUploadButtonView.swift */,
 			);
 			path = UploadImageButton;
 			sourceTree = "<group>";
@@ -450,6 +457,7 @@
 		46FCBE74279E2B0900BC045F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				46FCBE7C279EA47B00BC045F /* SettingViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -457,6 +465,7 @@
 		46FCBE75279E2B0E00BC045F /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				46FCBE78279E2D5E00BC045F /* SettingsViewProtocol.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -550,9 +559,11 @@
 				46D87D68279B1547005D0F15 /* ObscuredTextField.swift in Sources */,
 				46B37287279C9B6700AC5994 /* HomeViewModel.swift in Sources */,
 				46C314F6279B61A5000FDB8C /* ImagePicker.swift in Sources */,
+				46FCBE7B279EA04B00BC045F /* SimpleUploadButtonView.swift in Sources */,
 				46D87D6B279B1FFF005D0F15 /* RoundedRectangleButton.swift in Sources */,
 				46D87D66279B1349005D0F15 /* RoundedTextFieldModifier.swift in Sources */,
 				46ECD436279C415900DE6F7A /* LoadingAnimationView.swift in Sources */,
+				46FCBE79279E2D5E00BC045F /* SettingsViewProtocol.swift in Sources */,
 				46C3150D279C3AE9000FDB8C /* MessagePreviewTile.swift in Sources */,
 				46C314EF279B4A68000FDB8C /* AuthValidator.swift in Sources */,
 				46ECD433279C3EC900DE6F7A /* AsyncCircularAvatarView.swift in Sources */,
@@ -569,6 +580,7 @@
 				46657462279A30A9000D5E93 /* AuthView.swift in Sources */,
 				46C3150A279C38D7000FDB8C /* HomeView.swift in Sources */,
 				4665744F279A2FF6000D5E93 /* StartApp.swift in Sources */,
+				46FCBE7D279EA47B00BC045F /* SettingViewModel.swift in Sources */,
 				46C314F2279B560B000FDB8C /* AuthViewService.swift in Sources */,
 				4665746D279AB730000D5E93 /* CustomSegmentedPicker.swift in Sources */,
 				46C314F4279B58ED000FDB8C /* AuthViewProtocol.swift in Sources */,

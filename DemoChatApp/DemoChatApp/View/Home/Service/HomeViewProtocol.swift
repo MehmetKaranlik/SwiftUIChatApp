@@ -22,7 +22,7 @@ protocol HomeViewProtocol {
 
 
 
- func getUserLogout(completionHandler: @escaping CompletionHandler) -> Void
+
  func getUserName(completionHandler: @escaping FirebaseGetCallback) -> Void
 
 

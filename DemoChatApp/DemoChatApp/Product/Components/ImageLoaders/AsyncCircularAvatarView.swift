@@ -47,7 +47,7 @@ struct AsyncCircularAvatarView: View {
 
 struct AsyncCircularAvatar_Previews: PreviewProvider {
     static var previews: some View {
-        AsyncCircularAvatarView(userImageUrl: nil, radius: 30)
+        AsyncCircularAvatarView(userImageUrl: nil, radius: 150)
     }
 }
 

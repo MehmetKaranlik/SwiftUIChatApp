@@ -12,11 +12,12 @@ struct UploadImageButtonView: View {
  @Binding var image : UIImage?
  @Binding var isLogin : Bool
  @Binding var isAppear : Bool
+ var size : CGFloat
  let function : () -> Void
  var body: some View {
   ZStack {
    Circle()
-    .circleModifier()
+    .circleModifier(size: self.size)
     .scaleEffect(isLogin ? isAppear ? 1 : 1.2 : isAppear ? 0.8 : 1 )
    Button {
     if !isLogin {
@@ -25,16 +26,16 @@ struct UploadImageButtonView: View {
    } label: {
     if isLogin {
      Image(systemName: "message.circle.fill")
-      .imageModifier()
+      .imageModifier(size: self.size)
       .scaleEffect(isAppear ? 1 : 1 )
       .disabled(isLogin ? true : false)
     }else {
      if let image = self.image {
       Image(uiImage: image)
-       .imageModifier()
+       .imageModifier(size: self.size)
      }else {
       Image(systemName: "photo.circle.fill")
-       .imageModifier()
+       .imageModifier(size: self.size)
        .scaleEffect(isAppear ? 1 : 1 )
        .disabled(isLogin ? true : false)
      }
@@ -54,7 +55,7 @@ struct UploadImageButtonView: View {
 
 struct UploadImageButtonView_Previews: PreviewProvider {
  static var previews: some View {
-  UploadImageButtonView(image: .constant(nil), isLogin: .constant(false), isAppear: .constant(false)) {
+  UploadImageButtonView(image: .constant(nil), isLogin: .constant(false), isAppear: .constant(false), size: 50) {
    print("123")
   }
  }
@@ -62,10 +63,10 @@ struct UploadImageButtonView_Previews: PreviewProvider {
 
 
 fileprivate extension Circle {
- func circleModifier() -> some View {
+ func circleModifier(size: CGFloat) -> some View {
   self
-   .stroke(lineWidth: 3)
-   .frame(width: 120, height: 120, alignment: .center)
+   .stroke(lineWidth: 2)
+   .frame(width: size, height: size, alignment: .center)
    .foregroundColor(.green)
    .blur(radius: UIConstants.blurRadius)
  }
@@ -73,11 +74,11 @@ fileprivate extension Circle {
 
 
 fileprivate extension Image {
- func imageModifier() -> some View {
+ func imageModifier(size: CGFloat) -> some View {
   self
    .resizable()
    .scaledToFill()
-   .frame(width: 90, height: 90, alignment: .center)
+   .frame(width: size-10, height:  size-10, alignment: .center)
    .foregroundColor(.green)
    .blur(radius: UIConstants.blurRadius)
    .clipShape(Circle())
