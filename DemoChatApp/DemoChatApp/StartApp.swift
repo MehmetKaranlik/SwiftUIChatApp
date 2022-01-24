@@ -15,7 +15,7 @@ struct StartApp: App {
  }
     var body: some Scene {
         WindowGroup {
-         HomeView()
+         AuthView()
         }
     }
 }

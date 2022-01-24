@@ -19,6 +19,12 @@ static let shared : LocaleManager = LocaleManager()
 
  func clearAllCaches() -> Void {
 
+  if let bundleID = Bundle.main.bundleIdentifier {
+   UserDefaults.standard.removePersistentDomain(forName: bundleID)
+   sync()
+   print("cache temizlendi")
+  }
+
  }
 
 

@@ -34,6 +34,7 @@ class AuthViewModel : ObservableObject {
  @Published  var isLogin : Bool = true
  @Published  var isAppear : Bool  = false
  @Published  var isPresented : Bool = false
+ @Published var isNavigating : Bool = false
 
 
  // textfield variables
@@ -51,7 +52,7 @@ class AuthViewModel : ObservableObject {
  func createAccount()   -> Void {
   self.isLoading = true
    service.createNewAccount(email: self.email, password: self.password, passwordConfirm: self.passwordConfirm, image: image, completionHandler: {
-   self.isLoading = false
+    self.loginUser()
   })
 
  }
@@ -64,6 +65,7 @@ class AuthViewModel : ObservableObject {
     self.localeManager.setStringValue(key: LocaleKeys.username, value: cacheData)
     print("Logged-in and username cached")
     self.isLoading = false
+    self.isNavigating.toggle()
   }
  }
 

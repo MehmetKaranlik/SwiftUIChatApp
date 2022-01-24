@@ -48,6 +48,7 @@
 		46FCBE79279E2D5E00BC045F /* SettingsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FCBE78279E2D5E00BC045F /* SettingsViewProtocol.swift */; };
 		46FCBE7B279EA04B00BC045F /* SimpleUploadButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FCBE7A279EA04B00BC045F /* SimpleUploadButtonView.swift */; };
 		46FCBE7D279EA47B00BC045F /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FCBE7C279EA47B00BC045F /* SettingViewModel.swift */; };
+		46FCBE7F279EEC5300BC045F /* SettingsViewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FCBE7E279EEC5300BC045F /* SettingsViewService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,7 @@
 		46FCBE78279E2D5E00BC045F /* SettingsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewProtocol.swift; sourceTree = "<group>"; };
 		46FCBE7A279EA04B00BC045F /* SimpleUploadButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleUploadButtonView.swift; sourceTree = "<group>"; };
 		46FCBE7C279EA47B00BC045F /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		46FCBE7E279EEC5300BC045F /* SettingsViewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -466,6 +468,7 @@
 			isa = PBXGroup;
 			children = (
 				46FCBE78279E2D5E00BC045F /* SettingsViewProtocol.swift */,
+				46FCBE7E279EEC5300BC045F /* SettingsViewService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46FCBE7F279EEC5300BC045F /* SettingsViewService.swift in Sources */,
 				461BA303279AB8A700B58EBA /* AuthViewModel.swift in Sources */,
 				46D9ABD2279CD33700CAC8AB /* HomeViewProtocol.swift in Sources */,
 				461BA305279AF92A00B58EBA /* NavigationBar.swift in Sources */,

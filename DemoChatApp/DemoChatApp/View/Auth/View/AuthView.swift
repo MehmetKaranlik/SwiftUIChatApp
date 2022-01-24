@@ -56,6 +56,7 @@ struct AuthView: View {
    }
    .animationModifier(viewModel: viewModel)
    .navigationBarHidden(true)
+   
   }
   .navigationViewModifier()
   .fullScreenCover(isPresented: $viewModel.isPresented, onDismiss:{}) {
@@ -81,6 +82,10 @@ struct AuthView: View {
    }
    .padding(.top, viewModel.isLogin ? 50 : 0)
    Spacer()
+   NavigationLink("", isActive: $viewModel.isNavigating) {
+    HomeView()
+     .navigationBarBackButtonHidden(true)
+   }
   }
  }
 

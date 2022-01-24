@@ -6,9 +6,16 @@
 //
 
 import Foundation
+import Firebase
 
 
 protocol SettingsViewProtocol {
+ var auth: Firebase.Auth {
+  get
+ }
+ 
+ init()
+
  typealias CompletionHandler =  () ->  Void
 
 

@@ -16,7 +16,7 @@ struct HomeView: View {
  
   // MARK:  body
  var body: some View {
-  NavigationView {
+
    
    ZStack(alignment:.bottom) {
     
@@ -28,16 +28,6 @@ struct HomeView: View {
     .padding(.bottom ,20)
    }
    .navigationBarModifiers(viewModel: self.viewModel)
-
-
-   
-   
-  }
-
-  .navigationViewStyle(StackNavigationViewStyle())
-  
-  
-  
  }
  
  fileprivate func buildMessages() ->  some View {
