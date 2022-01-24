@@ -27,7 +27,7 @@ struct AsyncCircularAvatarView: View {
 
 
  fileprivate func buildAsyncImageAndPlaceholder() -> some View {
-  return AsyncImage(url: userImageUrl ?? URL(string: "https://i.picsum.photos/id/728/5000/5000.jpg?hmac=N_DBMtEroAZ7yHParJ7Iv4DdGWULTNUoCvJqPx_xqrc"))
+  return AsyncImage(url: userImageUrl ?? URL(string: "https://picsum.photos/200"))
   {
          phase in
 
