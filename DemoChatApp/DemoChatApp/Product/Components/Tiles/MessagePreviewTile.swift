@@ -10,7 +10,7 @@ import SwiftUI
 struct MessagePreviewTile: View {
  // MARK:  properties
 
- let userImageUrl : URL?
+ let userImageUrl : String?
  let userName : String
  let tileText : String
  let receiveData : Date

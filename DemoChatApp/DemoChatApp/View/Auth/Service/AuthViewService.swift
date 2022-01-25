@@ -30,7 +30,6 @@ struct AuthViewService : AuthViewProtocol {
      completionHandler()
      print("Failed to create user : \(error)")
     }else {
-     print("Successfully created user : \(result?.user.uid ?? "")")
      guard let uuid : String = result?.user.uid else {return}
      persistImageToStorage(uuid: uuid, image: image, email: email,password: password)
      completionHandler()
@@ -46,9 +45,7 @@ struct AuthViewService : AuthViewProtocol {
  // MARK:  store image to firestore
  private func storeUserInformation(imageProfileUrl : URL, email : String, password : String) -> Void {
   guard let uid = FirebaseAuth.Auth.auth().currentUser?.uid else { return }
-
-  let userData = ["email" : email, "password" : password , "uid" : uid, "userProfileImageUrl" : imageProfileUrl.absoluteString ]
-
+  let userData = ["email" : email, "password" : password , "uid" : uid, "userProfileImageUrl" :      imageProfileUrl.absoluteString ]
   FirebaseFirestore.Firestore
    .firestore()
    .collection("users")
@@ -56,15 +53,18 @@ struct AuthViewService : AuthViewProtocol {
     if let err = error {
      print("Cant push user credentails to firestore : \(err)")
     }
-    print("Succesfully pushed user credentials to firestore")
    }
  }
 
 
  // MARK:  uploading imageData to storage
  func persistImageToStorage(uuid: String, image: UIImage?, email : String, password : String) {
-  guard let imageData = image?.jpegData(compressionQuality: 1) else {return}
+  guard let imageData = image?.jpegData(compressionQuality: 0.50)
+  else {return
+   storeUserInformation(imageProfileUrl: URL(string: "https://toppng.com/uploads/preview/roger-berry-avatar-placeholder-11562991561rbrfzlng6h.png")!, email: email, password: password)}
+
   let ref = Storage.storage().reference(withPath: uuid)
+
   ref.putData(imageData, metadata: nil) { metadata, error in
    if let err = error {
     print("Failed to push image to storage: \(err)")
@@ -72,8 +72,8 @@ struct AuthViewService : AuthViewProtocol {
    ref.downloadURL { url, error in
     if let err = error {
      print("Failed to download image: \(err)")
+     storeUserInformation(imageProfileUrl: url != nil ?  url! :URL(string: "")!, email: email, password: password)
     }else {
-     print("Successfully stored image with url: \(url!.absoluteURL)")
      storeUserInformation(imageProfileUrl: url!, email: email, password: password)
     }
    }

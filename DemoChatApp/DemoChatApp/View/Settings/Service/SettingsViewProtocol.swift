@@ -7,6 +7,7 @@
 
 import Foundation
 import Firebase
+import UIKit
 
 
 protocol SettingsViewProtocol {
@@ -17,7 +18,9 @@ protocol SettingsViewProtocol {
  init()
 
  typealias CompletionHandler =  () ->  Void
+ typealias URLReturn = (String) -> Void
 
 
  func getUserLogout(completionHandler: @escaping CompletionHandler) -> Void
+ func persistImageToStorage(image: UIImage?, urlReturn : @escaping URLReturn) -> Void
 }

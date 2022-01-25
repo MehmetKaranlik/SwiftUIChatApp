@@ -24,6 +24,10 @@ class SettingsViewModel : ObservableObject {
  @Published var isPresented : Bool = false
  @Published var isNavigate : Bool = false
 
+ //strings
+
+ 
+
 
  //image
  var image : UIImage?
@@ -36,6 +40,13 @@ class SettingsViewModel : ObservableObject {
  func getUserLoggedOut() -> Void {
   service.getUserLogout {
    self.locale.clearAllCaches()
+  }
+ }
+
+ func updateUserPhoto() -> Void {
+  service.persistImageToStorage(image: image) { urlString in
+   self.locale.setStringValue(key: LocaleKeys.imageUrl, value: urlString)
+   print("new url cached")
   }
  }
 

@@ -9,5 +9,5 @@ import Foundation
 
 
 struct CurrentUserModel {
- var email,userImageUrl,userName : String
+ var email,userImageUrl,userName : String?
 }

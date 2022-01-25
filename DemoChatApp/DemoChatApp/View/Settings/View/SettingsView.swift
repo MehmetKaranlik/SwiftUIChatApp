@@ -52,7 +52,7 @@ struct SettingsView: View {
      .font(.footnote)
      .padding()
      .navigationBarTitleDisplayMode(.inline)
-     .fullScreenCover(isPresented: $viewModel.isPresented, onDismiss: nil) {
+     .fullScreenCover(isPresented: $viewModel.isPresented, onDismiss: viewModel.updateUserPhoto) {
       ImagePicker(image: $viewModel.image)
     }
 
@@ -101,10 +101,10 @@ fileprivate func buildImageGroup() -> some View {
  fileprivate func buildImage() -> some View {
   return ZStack(alignment: .bottomTrailing) {
    if viewModel.image == nil {
-    AsyncCircularAvatarView(userImageUrl: URL(string: "https://picsum.photos/200"), radius: 150)
+    AsyncCircularAvatarView(userImageUrl:"https://picsum.photos/200", radius: 150)
    }else{
     UploadImageButtonView(image: $viewModel.image, isLogin: .constant(false), isAppear: .constant(false),size: 150) {
-
+     
     }
    }
    SimpleUploadButtonView(size: 55) {

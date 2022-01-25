@@ -20,48 +20,49 @@ struct AuthView: View {
  var body: some View {
   NavigationView {
    VStack(spacing:0) {
-    if viewModel.isLoading {
-     LoadingAnimationView(fileName: "avatarLoading")
-    }else {
-     NavigationBarView(isLogin: $viewModel.isLogin)
+     if viewModel.isLoading {
+      LoadingAnimationView(fileName: "avatarLoading")
+     }else {
+      NavigationBarView(isLogin: $viewModel.isLogin)
 
-     CustomSegmentedPicker(isLogin: $viewModel.isLogin)
+      CustomSegmentedPicker(isLogin: $viewModel.isLogin)
 
 
-     DynamicVerticalSpacer(size: 40)
+      DynamicVerticalSpacer(size: 40)
 
-     UploadImageButtonView(image: $viewModel.image, isLogin: $viewModel.isLogin, isAppear: $viewModel.isAppear,size: 150) {
-      viewModel.isPresented.toggle()
+      UploadImageButtonView(image: $viewModel.image, isLogin: $viewModel.isLogin, isAppear: $viewModel.isAppear,size: 150) {
+       viewModel.isPresented.toggle()
+      }
+
+      if !viewModel.isLogin {
+       DynamicVerticalSpacer(size: 20)
+       buildUploadPhotoTitle()
+      }
+      DynamicVerticalSpacer(size:viewModel.isLogin ? 80 : 40)
+
+      UnobscuredTextFieldView(textBinding: $viewModel.email, promptText: "E-mail")
+
+      DynamicVerticalSpacer(size: 10)
+
+      ObscuredTextField(bindingText: $viewModel.password, promptText: "Password", labelText: "Password")
+
+
+      buildBottomVstack()
      }
-
-     if !viewModel.isLogin {
-      DynamicVerticalSpacer(size: 20)
-      buildUploadPhotoTitle()
-     }
-     DynamicVerticalSpacer(size:viewModel.isLogin ? 80 : 40)
-
-     UnobscuredTextFieldView(textBinding: $viewModel.email, promptText: "E-mail")
-
-     DynamicVerticalSpacer(size: 10)
-
-     ObscuredTextField(bindingText: $viewModel.password, promptText: "Password", labelText: "Password")
+ // MARK:  Vstack Expand
 
 
-     buildBottomVstack()
+
     }
-// MARK:  Vstack Expand
-
-
-
+    .animationModifier(viewModel: viewModel)
+    .navigationBarHidden(true)
+    .fullScreenCover(isPresented: $viewModel.isPresented, onDismiss:{}) {
+     ImagePicker(image: $viewModel.image)
    }
-   .animationModifier(viewModel: viewModel)
-   .navigationBarHidden(true)
+  }
    
-  }
-  .navigationViewModifier()
-  .fullScreenCover(isPresented: $viewModel.isPresented, onDismiss:{}) {
-   ImagePicker(image: $viewModel.image)
-  }
+
+
 
 
 
@@ -85,6 +86,7 @@ struct AuthView: View {
    NavigationLink("", isActive: $viewModel.isNavigating) {
     HomeView()
      .navigationBarBackButtonHidden(true)
+     .navigationBarHidden(true)
    }
   }
  }

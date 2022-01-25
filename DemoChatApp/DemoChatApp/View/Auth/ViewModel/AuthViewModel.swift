@@ -63,9 +63,9 @@ class AuthViewModel : ObservableObject {
   self.isLoading = true
    service.loginUser(email: email, password: password) {
     self.localeManager.setStringValue(key: LocaleKeys.username, value: cacheData)
-    print("Logged-in and username cached")
+    print("onay")
     self.isLoading = false
-    self.isNavigating.toggle()
+    self.isNavigating = true
   }
  }
 

@@ -9,8 +9,9 @@ import SwiftUI
 
 struct AsyncCircularAvatarView: View {
  // MARK:  properties
- let userImageUrl : URL?
+ let userImageUrl : String?
  let radius : CGFloat
+
 
 
 
@@ -27,7 +28,7 @@ struct AsyncCircularAvatarView: View {
 
 
  fileprivate func buildAsyncImageAndPlaceholder() -> some View {
-  return AsyncImage(url: userImageUrl ?? URL(string: "https://picsum.photos/200"))
+  return AsyncImage(url: URL(string:userImageUrl ?? "https://toppng.com/uploads/preview/roger-berry-avatar-placeholder-11562991561rbrfzlng6h.png"))
   {
          phase in
 

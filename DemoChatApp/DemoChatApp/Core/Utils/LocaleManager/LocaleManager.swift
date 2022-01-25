@@ -47,7 +47,7 @@ static let shared : LocaleManager = LocaleManager()
 
 // getters
  func getStringValue(key : LocaleKeys) -> String {
-  let temp : String = defaults.string(forKey: key.key) ?? "cache didnt found"
+  let temp : String = defaults.string(forKey: key.key) ?? ""
   return temp
  }
 

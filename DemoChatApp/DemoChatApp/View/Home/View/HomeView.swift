@@ -18,16 +18,18 @@ struct HomeView: View {
  var body: some View {
 
    
+  NavigationView {
    ZStack(alignment:.bottom) {
-    
-    buildMessages()
-    
-    RoundedRectangleButton(width:  width * 0.8, height: 40, foregroundColor: .white, backgroundColor: .green, opacity: 1, shadowApplied: true, buttonTitle: "+ New Message") {
-     
+
+     buildMessages()
+
+     RoundedRectangleButton(width:  width * 0.8, height: 40, foregroundColor: .white, backgroundColor: .green, opacity: 1, shadowApplied: true, buttonTitle: "+ New Message") {
+
+     }
+     .padding(.bottom ,20)
     }
-    .padding(.bottom ,20)
-   }
    .navigationBarModifiers(viewModel: self.viewModel)
+  }
  }
  
  fileprivate func buildMessages() ->  some View {
@@ -67,9 +69,9 @@ fileprivate extension ZStack  {
    .navigationTitle("Messages")
    .navigationBarTitleDisplayMode(.automatic)
    .navigationBarItems(leading: HStack{
-    AsyncCircularAvatarView(userImageUrl: URL(string: viewModel.user.userImageUrl), radius: 40)
+    AsyncCircularAvatarView(userImageUrl: viewModel.user.userImageUrl, radius: 40)
 
-    Text(viewModel.user.userName)
+    Text(viewModel.user.userName!)
    }, trailing: buildTrailingButton(viewModel: viewModel))
    .ignoresSafeArea(edges: .bottom)
  }

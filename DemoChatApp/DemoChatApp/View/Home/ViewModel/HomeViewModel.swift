@@ -19,18 +19,24 @@ class HomeViewModel : ObservableObject {
 
 
 
+
  init() {
   localeManager = LocaleManager.shared
   service = HomeViewService()
-  self.user.userName = self.localeManager.getStringValue(key: LocaleKeys.username)
+  self.user.userName = localeManager.getStringValue(key: LocaleKeys.username)
   service.getUserName { snapshot, error in
    guard let data = snapshot?.data() else {return}
    if let err = error {
     print(err)
    }else {
-    let temp = data["email"] as? String ?? ""
-    self.user.email = temp
+    self.user.email = data["email"] as? String ?? ""
     self.user.userImageUrl = data["userProfileImageUrl"] as? String ?? ""
+    if  data["userImageUrl"] as? String != "" {
+     let userImageUrl = data["userImageUrl"] as? String
+     self.localeManager.setStringValue(key: LocaleKeys.imageUrl, value: userImageUrl ?? "")
+     print("imageUrlCache:" + self.localeManager.getStringValue(key: LocaleKeys.imageUrl))
+    }
+    self.user.userImageUrl = self.localeManager.getStringValue(key: LocaleKeys.imageUrl)
 
 
    }
@@ -51,7 +57,7 @@ class HomeViewModel : ObservableObject {
 
 
  // userInfo
- @Published var user : CurrentUserModel = CurrentUserModel(email: "", userImageUrl: "", userName: "")
+ @Published var user : CurrentUserModel = CurrentUserModel(email: "", userImageUrl: nil, userName: "")
 
 
 
