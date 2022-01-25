@@ -9,17 +9,27 @@
 
 
 <h3> 
-*Animations
-*Firebase Auth
-*Firebase Firestore
-*Firebase Storage
-*Lottie Animations
-*AsyncImage usages with Lottie aniamtion placeholder
-*Locale Manager
-*Singleton Pattern
-*Atomic Design
-*MVVM architecture
-*Real-Time chat function (not implemented yet)
+
+<ol> 
+ 
+<li>*Animations</li>
+<li>*Firebase Auth</li>
+<li>*Firebase Firestore</li>
+<li>*Firebase Storage</li>
+<li>*Lottie Animations</li>
+<li>*AsyncImage usages with Lottie aniamtion placeholder</li>
+<li>*Locale Manager</li>
+<li>*Singleton Pattern</li>
+<li>*Atomic Design</li>
+<li>*MVVM architecture</li>
+<li>*Real-Time chat function (not implemented yet)</li>
+  
+  
+  </ol>
+  
+  
+  
+
 </h3>
 
 
