@@ -10,7 +10,7 @@
 
 <h3> 
 
-<ol> 
+<ul> 
  
 <li>*Animations</li>
 <li>*Firebase Auth</li>
@@ -25,7 +25,7 @@
 <li>*Real-Time chat function (not implemented yet)</li>
   
   
-  </ol>
+  </ul>
   
   
   
