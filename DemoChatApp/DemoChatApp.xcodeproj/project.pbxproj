@@ -422,6 +422,9 @@
 		46CDC7E127A2C31B00001D57 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				46CDC7EB27A2CEEF00001D57 /* Service */,
+				46CDC7EA27A2CEEB00001D57 /* Model */,
+				46CDC7E927A2CEE200001D57 /* ViewModel */,
 				46CDC7E227A2C32100001D57 /* View */,
 			);
 			path = Chat;
@@ -433,6 +436,27 @@
 				46CDC7E327A2C32A00001D57 /* ChatView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		46CDC7E927A2CEE200001D57 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		46CDC7EA27A2CEEB00001D57 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		46CDC7EB27A2CEEF00001D57 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		46D87D55279AFB8C005D0F15 /* Utils */ = {

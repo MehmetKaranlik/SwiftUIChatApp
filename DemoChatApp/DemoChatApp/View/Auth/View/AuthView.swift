@@ -58,8 +58,10 @@ struct AuthView: View {
     .navigationBarHidden(true)
     .fullScreenCover(isPresented: $viewModel.isPresented, onDismiss:{}) {
      ImagePicker(image: $viewModel.image)
-   }
+    }
+
   }
+
    
 
 
@@ -73,20 +75,23 @@ struct AuthView: View {
  fileprivate func buildBottomVstack() -> some View {
   return VStack{
    if !viewModel.isLogin {
-
     DynamicVerticalSpacer(size: 10)
+
     ObscuredTextField(bindingText: $viewModel.passwordConfirm, promptText: "Password Confirm", labelText: "Password Confirm")
    }
+
    Spacer()
+
    RoundedRectangleButton(width: 200, height: 40, foregroundColor: .white, backgroundColor: .green, opacity: 1, shadowApplied: true, buttonTitle:  viewModel.isLogin ? "Login": "Register") {
     buildAuthCallBack()
    }
    .padding(.top, viewModel.isLogin ? 50 : 0)
+
    Spacer()
+
    NavigationLink("", isActive: $viewModel.isNavigating) {
     HomeView()
-     .navigationBarBackButtonHidden(true)
-     .navigationBarHidden(true)
+           .hideBarAndNavigate() // this extension used to prevent secondary navigation bar bug
    }
   }
  }
