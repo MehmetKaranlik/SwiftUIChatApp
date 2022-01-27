@@ -10,11 +10,18 @@
 		461BA303279AB8A700B58EBA /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BA302279AB8A700B58EBA /* AuthViewModel.swift */; };
 		461BA305279AF92A00B58EBA /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BA304279AF92A00B58EBA /* NavigationBar.swift */; };
 		461BA309279AF9C600B58EBA /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BA308279AF9C600B58EBA /* UIConstants.swift */; };
+		46552F9A27A14F7A00DC68CD /* UserSelectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46552F9927A14F7A00DC68CD /* UserSelectingView.swift */; };
+		46552F9C27A14FC700DC68CD /* UserSelectingNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46552F9B27A14FC700DC68CD /* UserSelectingNavigationBarView.swift */; };
+		46552F9F27A177FB00DC68CD /* UserSelectingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46552F9E27A177FB00DC68CD /* UserSelectingViewModel.swift */; };
+		46552FA227A189AE00DC68CD /* ChatUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46552FA127A189AE00DC68CD /* ChatUserModel.swift */; };
+		46552FA527A18B4900DC68CD /* UserSelectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46552FA427A18B4900DC68CD /* UserSelectProtocol.swift */; };
+		46552FA827A18BB100DC68CD /* UserSelectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46552FA727A18BB100DC68CD /* UserSelectService.swift */; };
 		4665744F279A2FF6000D5E93 /* StartApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665744E279A2FF6000D5E93 /* StartApp.swift */; };
 		46657453279A2FF7000D5E93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46657452279A2FF7000D5E93 /* Assets.xcassets */; };
 		46657456279A2FF7000D5E93 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46657455279A2FF7000D5E93 /* Preview Assets.xcassets */; };
 		46657462279A30A9000D5E93 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46657461279A30A9000D5E93 /* AuthView.swift */; };
 		4665746D279AB730000D5E93 /* CustomSegmentedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665746C279AB730000D5E93 /* CustomSegmentedPicker.swift */; };
+		468E2B4627A07DF600107D55 /* HomeViewNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E2B4527A07DF600107D55 /* HomeViewNavigationBar.swift */; };
 		46B37287279C9B6700AC5994 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B37286279C9B6700AC5994 /* HomeViewModel.swift */; };
 		46C314EC279B46CE000FDB8C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46C314EB279B46CE000FDB8C /* GoogleService-Info.plist */; };
 		46C314EF279B4A68000FDB8C /* AuthValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C314EE279B4A68000FDB8C /* AuthValidator.swift */; };
@@ -28,6 +35,9 @@
 		46C31504279C3133000FDB8C /* LocaleKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C31503279C3133000FDB8C /* LocaleKeys.swift */; };
 		46C3150A279C38D7000FDB8C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C31509279C38D7000FDB8C /* HomeView.swift */; };
 		46C3150D279C3AE9000FDB8C /* MessagePreviewTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C3150C279C3AE9000FDB8C /* MessagePreviewTile.swift */; };
+		46CDC7E427A2C32A00001D57 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CDC7E327A2C32A00001D57 /* ChatView.swift */; };
+		46CDC7E627A2C36700001D57 /* UsernameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CDC7E527A2C36700001D57 /* UsernameExtension.swift */; };
+		46CDC7E827A2CA5D00001D57 /* NavigateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CDC7E727A2CA5D00001D57 /* NavigateExtensions.swift */; };
 		46D87D5B279AFC02005D0F15 /* UploadImageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D87D5A279AFC02005D0F15 /* UploadImageButtonView.swift */; };
 		46D87D5D279B0E0B005D0F15 /* DynamicVerticalSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D87D5C279B0E0B005D0F15 /* DynamicVerticalSpacer.swift */; };
 		46D87D60279B0E38005D0F15 /* DynamicHorizontalSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D87D5F279B0E38005D0F15 /* DynamicHorizontalSpacer.swift */; };
@@ -55,12 +65,19 @@
 		461BA302279AB8A700B58EBA /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		461BA304279AF92A00B58EBA /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		461BA308279AF9C600B58EBA /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
+		46552F9927A14F7A00DC68CD /* UserSelectingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSelectingView.swift; sourceTree = "<group>"; };
+		46552F9B27A14FC700DC68CD /* UserSelectingNavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSelectingNavigationBarView.swift; sourceTree = "<group>"; };
+		46552F9E27A177FB00DC68CD /* UserSelectingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSelectingViewModel.swift; sourceTree = "<group>"; };
+		46552FA127A189AE00DC68CD /* ChatUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUserModel.swift; sourceTree = "<group>"; };
+		46552FA427A18B4900DC68CD /* UserSelectProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSelectProtocol.swift; sourceTree = "<group>"; };
+		46552FA727A18BB100DC68CD /* UserSelectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSelectService.swift; sourceTree = "<group>"; };
 		4665744B279A2FF6000D5E93 /* DemoChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4665744E279A2FF6000D5E93 /* StartApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartApp.swift; sourceTree = "<group>"; };
 		46657452279A2FF7000D5E93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46657455279A2FF7000D5E93 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		46657461279A30A9000D5E93 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		4665746C279AB730000D5E93 /* CustomSegmentedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedPicker.swift; sourceTree = "<group>"; };
+		468E2B4527A07DF600107D55 /* HomeViewNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewNavigationBar.swift; sourceTree = "<group>"; };
 		46B37286279C9B6700AC5994 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		46C314EB279B46CE000FDB8C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		46C314EE279B4A68000FDB8C /* AuthValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthValidator.swift; sourceTree = "<group>"; };
@@ -71,6 +88,9 @@
 		46C31503279C3133000FDB8C /* LocaleKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleKeys.swift; sourceTree = "<group>"; };
 		46C31509279C38D7000FDB8C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		46C3150C279C3AE9000FDB8C /* MessagePreviewTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagePreviewTile.swift; sourceTree = "<group>"; };
+		46CDC7E327A2C32A00001D57 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		46CDC7E527A2C36700001D57 /* UsernameExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameExtension.swift; sourceTree = "<group>"; };
+		46CDC7E727A2CA5D00001D57 /* NavigateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigateExtensions.swift; sourceTree = "<group>"; };
 		46D87D5A279AFC02005D0F15 /* UploadImageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageButtonView.swift; sourceTree = "<group>"; };
 		46D87D5C279B0E0B005D0F15 /* DynamicVerticalSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicVerticalSpacer.swift; sourceTree = "<group>"; };
 		46D87D5F279B0E38005D0F15 /* DynamicHorizontalSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHorizontalSpacer.swift; sourceTree = "<group>"; };
@@ -133,6 +153,50 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		46552F9727A14F5E00DC68CD /* UserSelecting */ = {
+			isa = PBXGroup;
+			children = (
+				46552FA327A18B3B00DC68CD /* Service */,
+				46552FA027A1899D00DC68CD /* Model */,
+				46552F9D27A177E600DC68CD /* ViewModel */,
+				46552F9827A14F6900DC68CD /* View */,
+			);
+			path = UserSelecting;
+			sourceTree = "<group>";
+		};
+		46552F9827A14F6900DC68CD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				46552F9927A14F7A00DC68CD /* UserSelectingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		46552F9D27A177E600DC68CD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				46552F9E27A177FB00DC68CD /* UserSelectingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		46552FA027A1899D00DC68CD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				46552FA127A189AE00DC68CD /* ChatUserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		46552FA327A18B3B00DC68CD /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				46552FA427A18B4900DC68CD /* UserSelectProtocol.swift */,
+				46552FA727A18BB100DC68CD /* UserSelectService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		46657442279A2FF6000D5E93 = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +248,8 @@
 		4665745D279A308A000D5E93 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				46CDC7E127A2C31B00001D57 /* Chat */,
+				46552F9727A14F5E00DC68CD /* UserSelecting */,
 				46FCBE72279E2AF900BC045F /* Settings */,
 				46C31505279C38A9000FDB8C /* Home */,
 				4665745F279A3098000D5E93 /* Auth */,
@@ -253,6 +319,8 @@
 			isa = PBXGroup;
 			children = (
 				461BA304279AF92A00B58EBA /* NavigationBar.swift */,
+				468E2B4527A07DF600107D55 /* HomeViewNavigationBar.swift */,
+				46552F9B27A14FC700DC68CD /* UserSelectingNavigationBarView.swift */,
 			);
 			path = NavigationBar;
 			sourceTree = "<group>";
@@ -351,6 +419,22 @@
 			path = ImageLoaders;
 			sourceTree = "<group>";
 		};
+		46CDC7E127A2C31B00001D57 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				46CDC7E227A2C32100001D57 /* View */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		46CDC7E227A2C32100001D57 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				46CDC7E327A2C32A00001D57 /* ChatView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		46D87D55279AFB8C005D0F15 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -401,6 +485,8 @@
 		46D87D64279B132B005D0F15 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				46CDC7E527A2C36700001D57 /* UsernameExtension.swift */,
+				46CDC7E727A2CA5D00001D57 /* NavigateExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -564,11 +650,14 @@
 				46B37287279C9B6700AC5994 /* HomeViewModel.swift in Sources */,
 				46C314F6279B61A5000FDB8C /* ImagePicker.swift in Sources */,
 				46FCBE7B279EA04B00BC045F /* SimpleUploadButtonView.swift in Sources */,
+				46552FA227A189AE00DC68CD /* ChatUserModel.swift in Sources */,
+				46552F9C27A14FC700DC68CD /* UserSelectingNavigationBarView.swift in Sources */,
 				46D87D6B279B1FFF005D0F15 /* RoundedRectangleButton.swift in Sources */,
 				46D87D66279B1349005D0F15 /* RoundedTextFieldModifier.swift in Sources */,
 				46ECD436279C415900DE6F7A /* LoadingAnimationView.swift in Sources */,
 				46FCBE79279E2D5E00BC045F /* SettingsViewProtocol.swift in Sources */,
 				46C3150D279C3AE9000FDB8C /* MessagePreviewTile.swift in Sources */,
+				468E2B4627A07DF600107D55 /* HomeViewNavigationBar.swift in Sources */,
 				46C314EF279B4A68000FDB8C /* AuthValidator.swift in Sources */,
 				46ECD433279C3EC900DE6F7A /* AsyncCircularAvatarView.swift in Sources */,
 				46D87D6D279B22D6005D0F15 /* CustomButtonModifier.swift in Sources */,
@@ -576,17 +665,24 @@
 				46D87D5D279B0E0B005D0F15 /* DynamicVerticalSpacer.swift in Sources */,
 				46D87D63279B1188005D0F15 /* UnobscuredTextFieldView.swift in Sources */,
 				46D87D5B279AFC02005D0F15 /* UploadImageButtonView.swift in Sources */,
+				46552F9F27A177FB00DC68CD /* UserSelectingViewModel.swift in Sources */,
 				46D87D60279B0E38005D0F15 /* DynamicHorizontalSpacer.swift in Sources */,
 				46FCBE77279E2BF100BC045F /* SettingsView.swift in Sources */,
+				46CDC7E827A2CA5D00001D57 /* NavigateExtensions.swift in Sources */,
 				46C31501279C2AE3000FDB8C /* LocaleManager.swift in Sources */,
+				46CDC7E627A2C36700001D57 /* UsernameExtension.swift in Sources */,
+				46552F9A27A14F7A00DC68CD /* UserSelectingView.swift in Sources */,
 				46D9ABD4279CD38A00CAC8AB /* HomeViewService.swift in Sources */,
 				46D9ABD7279CE0F700CAC8AB /* CurrentUserModel.swift in Sources */,
 				46657462279A30A9000D5E93 /* AuthView.swift in Sources */,
 				46C3150A279C38D7000FDB8C /* HomeView.swift in Sources */,
 				4665744F279A2FF6000D5E93 /* StartApp.swift in Sources */,
+				46CDC7E427A2C32A00001D57 /* ChatView.swift in Sources */,
 				46FCBE7D279EA47B00BC045F /* SettingViewModel.swift in Sources */,
+				46552FA827A18BB100DC68CD /* UserSelectService.swift in Sources */,
 				46C314F2279B560B000FDB8C /* AuthViewService.swift in Sources */,
 				4665746D279AB730000D5E93 /* CustomSegmentedPicker.swift in Sources */,
+				46552FA527A18B4900DC68CD /* UserSelectProtocol.swift in Sources */,
 				46C314F4279B58ED000FDB8C /* AuthViewProtocol.swift in Sources */,
 				46C31504279C3133000FDB8C /* LocaleKeys.swift in Sources */,
 			);

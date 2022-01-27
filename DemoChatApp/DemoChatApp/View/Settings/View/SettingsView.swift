@@ -27,7 +27,7 @@ struct SettingsView: View {
       Text("What  do you want to do ? ")
        .foregroundColor(.green)
        .font(.title2)
-      buildImageGroup()
+      buildImageGroup(viewModel: viewModel)
       DynamicVerticalSpacer(size: 20)
       buildUserInformation()
       buildApplicationInformation()
@@ -74,7 +74,7 @@ struct SettingsView: View {
 
  fileprivate func buildUserInformation() -> some View {
   return GroupBox {
-   GroupListTile(leftText: "Username:", rightText: viewModel.locale.getStringValue(key: LocaleKeys.username))
+   GroupListTile(leftText: "Username:", rightText: viewModel.locale.getStringValue(key: LocaleKeys.email).userNameExtract())
    GroupListTile(leftText: "Email:", rightText: viewModel.locale.getStringValue(key: LocaleKeys.email))
    GroupListTile(leftText: "Unique ID:", rightText: viewModel.locale.getStringValue(key: LocaleKeys.userUid))
   } label: {
@@ -84,9 +84,9 @@ struct SettingsView: View {
  }
 
 
-fileprivate func buildImageGroup() -> some View {
+fileprivate func buildImageGroup(viewModel : SettingsViewModel) -> some View {
   return GroupBox {
-   buildImage()
+   buildImage(viewModel: viewModel)
    DynamicVerticalSpacer(size: 20)
    Text("To change image use icon above")
     .font(.caption)
@@ -98,10 +98,10 @@ fileprivate func buildImageGroup() -> some View {
   .padding()
  }
 
- fileprivate func buildImage() -> some View {
+ fileprivate func buildImage(viewModel : SettingsViewModel) -> some View {
   return ZStack(alignment: .bottomTrailing) {
    if viewModel.image == nil {
-    AsyncCircularAvatarView(userImageUrl:"https://picsum.photos/200", radius: 150)
+    AsyncCircularAvatarView(userImageUrl: $viewModel.userImageUrl, radius: 150)
    }else{
     UploadImageButtonView(image: $viewModel.image, isLogin: .constant(false), isAppear: .constant(false),size: 150) {
      

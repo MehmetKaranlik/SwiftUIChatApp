@@ -32,7 +32,7 @@ struct AuthValidator {
 
  func loginValidator(email:String, password: String) -> Bool {
   var validateResult : Bool = false
-  if email.contains(".com") && email.contains(".com") && !email.isEmpty && !password.isEmpty {
+  if email.contains(".com") && !email.isEmpty && !password.isEmpty && password.count > 6 {
    validateResult = true
    return validateResult
   }else {

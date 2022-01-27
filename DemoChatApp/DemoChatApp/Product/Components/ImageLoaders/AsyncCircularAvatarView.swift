@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AsyncCircularAvatarView: View {
  // MARK:  properties
- let userImageUrl : String?
+ @Binding var userImageUrl : String?
  let radius : CGFloat
 
 
@@ -28,7 +28,7 @@ struct AsyncCircularAvatarView: View {
 
 
  fileprivate func buildAsyncImageAndPlaceholder() -> some View {
-  return AsyncImage(url: URL(string:userImageUrl ?? "https://toppng.com/uploads/preview/roger-berry-avatar-placeholder-11562991561rbrfzlng6h.png"))
+  return AsyncImage(url: URL(string: defineUrl() ))
   {
          phase in
 
@@ -44,11 +44,24 @@ struct AsyncCircularAvatarView: View {
   .clipShape(Circle())
  }
 
+ func defineUrl() -> String {
+  if userImageUrl != nil && userImageUrl != "" {
+   return userImageUrl!
+  }
+  else {
+   return
+    "https://toppng.com/uploads/preview/roger-berry-avatar-placeholder-11562991561rbrfzlng6h.png"
+  }
+ }
+
 }// MARK:  end of view
 
+
+
+// MARK:  preview
 struct AsyncCircularAvatar_Previews: PreviewProvider {
     static var previews: some View {
-        AsyncCircularAvatarView(userImageUrl: nil, radius: 150)
+     AsyncCircularAvatarView(userImageUrl: .constant(nil), radius: 150)
     }
 }
 

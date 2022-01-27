@@ -9,9 +9,15 @@ import SwiftUI
 
 struct HomeView: View {
   // MARK:  properties
- @ObservedObject var viewModel : HomeViewModel = HomeViewModel()
+ @ObservedObject var viewModel : HomeViewModel
  let width : CGFloat = UIScreen.main.bounds.width
  let height : CGFloat = UIScreen.main.bounds.height
+
+
+ init() {
+  viewModel =  HomeViewModel()
+
+ }
  
  
   // MARK:  body
@@ -21,28 +27,41 @@ struct HomeView: View {
   NavigationView {
    ZStack(alignment:.bottom) {
 
-     buildMessages()
+    buildMessages(viewModel: self.viewModel)
 
      RoundedRectangleButton(width:  width * 0.8, height: 40, foregroundColor: .white, backgroundColor: .green, opacity: 1, shadowApplied: true, buttonTitle: "+ New Message") {
-
+      viewModel.isSheetPresented.toggle()
      }
      .padding(.bottom ,20)
     }
-   .navigationBarModifiers(viewModel: self.viewModel)
+   .navigationBarModifiers(vm: self.viewModel)
+  }
+  .navigationViewStyle(StackNavigationViewStyle())
+  .fullScreenCover(isPresented: $viewModel.isSheetPresented, onDismiss: nil) {
+  UserSelectingView()
   }
  }
  
- fileprivate func buildMessages() ->  some View {
-  return ScrollView {
+ fileprivate func buildMessages(viewModel: HomeViewModel) ->  some View {
+  return
    VStack {
-    ForEach(0...2, id : \.self) { item in
-     MessagePreviewTile(userImageUrl: nil, userName: "Eddie", tileText: "Lorem ipsum", receiveData: Date.now)
+    HomeViewNavigationBar(height: 55, userImageUrl: $viewModel.userImageUrl, imageSize: 45)
+    ScrollView {
+     VStack {
+      ForEach(0...2, id : \.self) { item in
+       MessagePreviewTile(userImageUrl: .constant(nil), userName: "Eddie", tileText: "Lorem ipsum", receiveData: Date.now)
+      }
+
+      DynamicVerticalSpacer(size: 70)
+     }
+
     }
-    
-    DynamicVerticalSpacer(size: 70)
    }
-   
+   .refreshable {
+   print("123")
+   viewModel.refreshFunction()
   }
+
   
   
  }
@@ -64,28 +83,13 @@ struct HomeView_Previews: PreviewProvider {
 fileprivate extension ZStack  {
  
  
- func navigationBarModifiers(viewModel: HomeViewModel) -> some View {
+ func navigationBarModifiers(vm : HomeViewModel) -> some View {
   self
    .navigationTitle("Messages")
    .navigationBarTitleDisplayMode(.automatic)
-   .navigationBarItems(leading: HStack{
-    AsyncCircularAvatarView(userImageUrl: viewModel.user.userImageUrl, radius: 40)
-
-    Text(viewModel.user.userName!)
-   }, trailing: buildTrailingButton(viewModel: viewModel))
+   .navigationBarHidden(true)
    .ignoresSafeArea(edges: .bottom)
  }
  
  
- func buildTrailingButton(viewModel : HomeViewModel) -> some View {
-  return NavigationLink {
-   SettingsView()
-  } label: {
-   Image(systemName: "gear")
-    .font(.system(size: 24, weight: .bold))
-    .foregroundColor(.green)
-    .blur(radius: UIConstants.blurRadius)
-  }
-
- }
 }

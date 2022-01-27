@@ -46,6 +46,7 @@ class AuthViewModel : ObservableObject {
 
 
 
+
  // MARK:  Functions
 
  // Firebase Callbacks
@@ -61,11 +62,13 @@ class AuthViewModel : ObservableObject {
   let range = self.email.range(of: "@")?.lowerBound
   let cacheData = String(email.prefix(upTo: range ?? String.Index(utf16Offset: 5, in: "asdadsadasd")))
   self.isLoading = true
+  LocaleManager.shared.setStringValue(key: LocaleKeys.userPassword, value: self.password)
+  LocaleManager.shared.setStringValue(key: LocaleKeys.email, value: self.email)
    service.loginUser(email: email, password: password) {
     self.localeManager.setStringValue(key: LocaleKeys.username, value: cacheData)
     print("onay")
-    self.isLoading = false
     self.isNavigating = true
+    self.isLoading = false
   }
  }
 

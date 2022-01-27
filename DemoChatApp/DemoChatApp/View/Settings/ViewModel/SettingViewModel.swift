@@ -17,6 +17,7 @@ class SettingsViewModel : ObservableObject {
  init() {
   locale = LocaleManager.shared
   service  = SettingsViewService()
+  userImageUrl = locale.getStringValue(key: LocaleKeys.imageUrl)
  }
 
  // MARK:  variables
@@ -25,7 +26,7 @@ class SettingsViewModel : ObservableObject {
  @Published var isNavigate : Bool = false
 
  //strings
-
+ @Published var userImageUrl : String?
  
 
 

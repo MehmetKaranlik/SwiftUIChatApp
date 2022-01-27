@@ -1,9 +1,9 @@
-//
-//  AuthViewService.swift
-//  DemoChatApp
-//
-//  Created by mehmet karanlık on 21.01.2022.
-//
+ //
+ //  AuthViewService.swift
+ //  DemoChatApp
+ //
+ //  Created by mehmet karanlık on 21.01.2022.
+ //
 
 import Foundation
 import UIKit
@@ -15,12 +15,12 @@ typealias CompletionHandler =  () ->  Void
 struct AuthViewService : AuthViewProtocol {
 
  static let shared = AuthViewService()
-
+ 
  private init() {}
 
 
 
- // MARK: creatin new account with validation
+  // MARK: creatin new account with validation
  func createNewAccount(email: String, password: String, passwordConfirm: String, image: UIImage?,  completionHandler : @escaping CompletionHandler) {
 
   if AuthValidator.shared.createAccountValidator(
@@ -42,7 +42,7 @@ struct AuthViewService : AuthViewProtocol {
  }
 
 
- // MARK:  store image to firestore
+  // MARK:  store image to firestore
  private func storeUserInformation(imageProfileUrl : URL, email : String, password : String) -> Void {
   guard let uid = FirebaseAuth.Auth.auth().currentUser?.uid else { return }
   let userData = ["email" : email, "password" : password , "uid" : uid, "userProfileImageUrl" :      imageProfileUrl.absoluteString ]
@@ -57,7 +57,7 @@ struct AuthViewService : AuthViewProtocol {
  }
 
 
- // MARK:  uploading imageData to storage
+  // MARK:  uploading imageData to storage
  func persistImageToStorage(uuid: String, image: UIImage?, email : String, password : String) {
   guard let imageData = image?.jpegData(compressionQuality: 0.50)
   else {return
@@ -88,10 +88,7 @@ struct AuthViewService : AuthViewProtocol {
      print("Failed to login : \(error)")
      completionHandler()
     }else {
-     print("Succesfully logged in : \(result?.user.uid ?? "")")
      LocaleManager.shared.setStringValue(key: LocaleKeys.userUid, value: result?.user.uid ?? "")
-     LocaleManager.shared.setStringValue(key: LocaleKeys.userPassword, value: password)
-     LocaleManager.shared.setStringValue(key: LocaleKeys.email, value: email)
      completionHandler()
     }
    }
