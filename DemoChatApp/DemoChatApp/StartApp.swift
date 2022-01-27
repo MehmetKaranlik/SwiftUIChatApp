@@ -20,11 +20,7 @@ struct StartApp: App {
  }
     var body: some Scene {
         WindowGroup {
-         if defineRootView() {
-          HomeView()
-         }else{
-          AuthView()
-         }
+         RootView()
         }
     }
 }

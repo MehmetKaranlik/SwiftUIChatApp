@@ -13,11 +13,13 @@ class SettingsViewModel : ObservableObject {
 
  let locale : LocaleManager
  let service : SettingsViewService
+ let appState : NavigationController
 
  init() {
   locale = LocaleManager.shared
   service  = SettingsViewService()
   userImageUrl = locale.getStringValue(key: LocaleKeys.imageUrl)
+  appState = NavigationController.shared
  }
 
  // MARK:  variables
@@ -41,6 +43,7 @@ class SettingsViewModel : ObservableObject {
  func getUserLoggedOut() -> Void {
   service.getUserLogout {
    self.locale.clearAllCaches()
+   self.appState.appState = .Auth
   }
  }
 

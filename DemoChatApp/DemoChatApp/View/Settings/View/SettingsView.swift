@@ -34,13 +34,9 @@ struct SettingsView: View {
      // DynamicVerticalSpacer(size: 50)
     RoundedRectangleButton(width: 250, height: 50, foregroundColor: .white, backgroundColor: .red, opacity: 1, shadowApplied: true, buttonTitle: "Sign-Out") {
      viewModel.getUserLoggedOut()
-     viewModel.isNavigate.toggle()
+     
     }
-    NavigationLink("", isActive: $viewModel.isNavigate) {
-     AuthView()
-      .navigationBarBackButtonHidden(true)
-      .navigationBarHidden(true)
-    }.isDetailLink(false)
+
 
 
       Spacer()

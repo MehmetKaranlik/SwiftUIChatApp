@@ -81,12 +81,11 @@ struct AuthViewService : AuthViewProtocol {
  }
 
   // MARK: signing in with validation
- func loginUser(email : String , password : String, completionHandler :@escaping CompletionHandler) {
+ func loginUser(email : String , password : String, completionHandler :@escaping CompletionHandler, errorHandler : @escaping CompletionHandler ) {
   if AuthValidator.shared.loginValidator(email: email, password: password) {
    Auth.auth().signIn(withEmail: email, password: password) { result, error in
     if let error = error {
      print("Failed to login : \(error)")
-     completionHandler()
     }else {
      LocaleManager.shared.setStringValue(key: LocaleKeys.userUid, value: result?.user.uid ?? "")
      completionHandler()
@@ -94,6 +93,7 @@ struct AuthViewService : AuthViewProtocol {
    }
   }else {
    print("Not validated to login")
+   errorHandler()
   }
  }
 

@@ -11,21 +11,23 @@ import UIKit
 
 
 class AuthViewModel : ObservableObject {
-// MARK:  instances
+  // MARK:  instances
  let service : AuthViewService
  let localeManager : LocaleManager
+ let appState: NavigationController
 
 
  init() {
   localeManager = LocaleManager.shared
   service = AuthViewService.shared
+  appState = NavigationController.shared
  }
 
 
 
 
- // MARK:  Variables
- // image variable
+  // MARK:  Variables
+  // image variable
  @Published var image : UIImage?
 
 
@@ -37,7 +39,7 @@ class AuthViewModel : ObservableObject {
  @Published var isNavigating : Bool = false
 
 
- // textfield variables
+  // textfield variables
 
  @Published var email : String = ""
  @Published var password : String = ""
@@ -47,13 +49,13 @@ class AuthViewModel : ObservableObject {
 
 
 
- // MARK:  Functions
+  // MARK:  Functions
 
- // Firebase Callbacks
+  // Firebase Callbacks
  func createAccount()   -> Void {
   self.isLoading = true
-   service.createNewAccount(email: self.email, password: self.password, passwordConfirm: self.passwordConfirm, image: image, completionHandler: {
-    self.loginUser()
+  service.createNewAccount(email: self.email, password: self.password, passwordConfirm: self.passwordConfirm, image: image, completionHandler: {
+   self.loginUser()
   })
 
  }
@@ -64,11 +66,13 @@ class AuthViewModel : ObservableObject {
   self.isLoading = true
   LocaleManager.shared.setStringValue(key: LocaleKeys.userPassword, value: self.password)
   LocaleManager.shared.setStringValue(key: LocaleKeys.email, value: self.email)
-   service.loginUser(email: email, password: password) {
-    self.localeManager.setStringValue(key: LocaleKeys.username, value: cacheData)
-    print("onay")
-    self.isNavigating = true
-    self.isLoading = false
+  service.loginUser(email: email, password: password) {
+   self.localeManager.setStringValue(key: LocaleKeys.username, value: cacheData)
+   print("onay")
+   self.isLoading = false
+   self.appState.appState = .Home
+  }errorHandler: {
+   self.isLoading = false
   }
  }
 
@@ -77,7 +81,7 @@ class AuthViewModel : ObservableObject {
 
 
 
- // util functions
+  // util functions
 
  func clearCredentials() {
   password.removeAll()

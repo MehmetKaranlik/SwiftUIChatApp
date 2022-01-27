@@ -11,12 +11,7 @@ struct AuthView: View {
   // MARK:  properties
  @ObservedObject var viewModel : AuthViewModel = AuthViewModel()
 
-
-
-
   // MARK:  body
-
-
  var body: some View {
   NavigationView {
    VStack(spacing:0) {
@@ -88,11 +83,6 @@ struct AuthView: View {
    .padding(.top, viewModel.isLogin ? 50 : 0)
 
    Spacer()
-
-   NavigationLink("", isActive: $viewModel.isNavigating) {
-    HomeView()
-           .hideBarAndNavigate() // this extension used to prevent secondary navigation bar bug
-   }
   }
  }
 
