@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct AuthView: View {
   // MARK:  properties
  @ObservedObject var viewModel : AuthViewModel = AuthViewModel()
@@ -44,18 +45,25 @@ struct AuthView: View {
 
       buildBottomVstack()
      }
+
  // MARK:  Vstack Expand
 
 
 
     }
+
+
+
     .animationModifier(viewModel: viewModel)
     .navigationBarHidden(true)
     .fullScreenCover(isPresented: $viewModel.isPresented, onDismiss:{}) {
      ImagePicker(image: $viewModel.image)
     }
 
+
   }
+
+  
 
    
 
@@ -68,23 +76,33 @@ struct AuthView: View {
 
 
  fileprivate func buildBottomVstack() -> some View {
-  return VStack{
-   if !viewModel.isLogin {
-    DynamicVerticalSpacer(size: 10)
+  return
+   VStack{
+    if !viewModel.isLogin {
+     DynamicVerticalSpacer(size: 10)
 
-    ObscuredTextField(bindingText: $viewModel.passwordConfirm, promptText: "Password Confirm", labelText: "Password Confirm")
-   }
+     ObscuredTextField(bindingText: $viewModel.passwordConfirm, promptText: "Password Confirm", labelText: "Password Confirm")
+    }
 
-   Spacer()
+    Spacer()
 
-   RoundedRectangleButton(width: 200, height: 40, foregroundColor: .white, backgroundColor: .green, opacity: 1, shadowApplied: true, buttonTitle:  viewModel.isLogin ? "Login": "Register") {
-    buildAuthCallBack()
-   }
-   .padding(.top, viewModel.isLogin ? 50 : 0)
+    RoundedRectangleButton(width: 200, height: 40, foregroundColor: .white, backgroundColor: .green, opacity: 1, shadowApplied: true, buttonTitle:  viewModel.isLogin ? "Login": "Register") {
+     buildAuthCallBack()
+    }
+    .padding(.top, viewModel.isLogin ? 50 : 0)
 
-   Spacer()
+    Spacer()
+
   }
- }
+
+
+   }
+
+
+
+
+
+
 
  
 
@@ -104,7 +122,8 @@ struct AuthView: View {
     .font(.body)
     .bold()
   }
- }
+
+}
 
 
 

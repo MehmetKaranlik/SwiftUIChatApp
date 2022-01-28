@@ -12,6 +12,11 @@ import AudioToolbox
 struct SettingsView: View {
  // MARK:  properties
  @ObservedObject var viewModel : SettingsViewModel = SettingsViewModel()
+ @ObservedObject var appState : NavigationController
+
+ init() {
+  appState = NavigationController.shared
+ }
 
 
  // MARK:  body
@@ -19,32 +24,17 @@ struct SettingsView: View {
 
 
 
-
-
  var body: some View {
 
    VStack {
-      Text("What  do you want to do ? ")
-       .foregroundColor(.green)
-       .font(.title2)
+      buildBackButton()
       buildImageGroup(viewModel: viewModel)
       DynamicVerticalSpacer(size: 20)
       buildUserInformation()
       buildApplicationInformation()
-     // DynamicVerticalSpacer(size: 50)
-    RoundedRectangleButton(width: 250, height: 50, foregroundColor: .white, backgroundColor: .red, opacity: 1, shadowApplied: true, buttonTitle: "Sign-Out") {
-     viewModel.getUserLoggedOut()
-     
-    }
-
-
-
-      Spacer()
-
-
-
+    buildLogoutButton()
+    Spacer()
      }
-
      .font(.footnote)
      .padding()
      .navigationBarTitleDisplayMode(.inline)
@@ -54,6 +44,33 @@ struct SettingsView: View {
 
 
    }
+
+
+ fileprivate func buildLogoutButton() -> RoundedRectangleButton {
+  RoundedRectangleButton(width: 250, height: 50, foregroundColor: .white, backgroundColor: .red, opacity: 1, shadowApplied: true, buttonTitle: "Sign-Out") {
+   viewModel.getUserLoggedOut()
+
+  }
+ }
+
+ fileprivate func buildBackButton() -> some View {
+  return HStack {
+   Button {
+    appState.appState = .Home
+   } label: {
+    Image(systemName: "arrow.backward.circle.fill")
+     .font(.title2)
+     .foregroundColor(.green)
+     .blur(radius: UIConstants.blurRadius)
+   }
+   DynamicHorizontalSpacer(size: 30)
+   Text("What  do you want to do ? ")
+    .foregroundColor(.green)
+    .font(.title2)
+   Spacer()
+  }
+ }
+
 
  fileprivate func buildApplicationInformation() -> some View {
   return GroupBox {
@@ -113,7 +130,7 @@ fileprivate func buildImageGroup(viewModel : SettingsViewModel) -> some View {
 }
 
 
-
+// MARK:  preview
 struct SettingsView_Previews: PreviewProvider {
  static var previews: some View {
   SettingsView()

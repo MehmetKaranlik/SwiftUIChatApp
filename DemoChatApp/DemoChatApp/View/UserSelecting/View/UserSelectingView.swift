@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct UserSelectingView: View {
- @Environment(\.presentationMode) var presentationMode
  @ObservedObject var viewModel : UserSelectingViewModel = UserSelectingViewModel()
+ @ObservedObject var appState : NavigationController
+
+ init(){
+  appState = NavigationController.shared
+ }
 
  var body: some View {
   VStack {
@@ -39,7 +43,7 @@ struct UserSelectingView: View {
  }
  fileprivate func buildNavigationBar() -> UserSelectingNavigationBarView {
   return UserSelectingNavigationBarView(titleText: "New Message") {
-   presentationMode.wrappedValue.dismiss() // cover closing function
+   appState.appState = .Home
   }
 
  }

@@ -8,6 +8,7 @@
 import Foundation
 import Firebase
 import UIKit
+import SwiftUI
 
 
 class AuthViewModel : ObservableObject {
@@ -33,10 +34,10 @@ class AuthViewModel : ObservableObject {
 
   // bools
  @Published var isLoading : Bool = false
- @Published  var isLogin : Bool = true
- @Published  var isAppear : Bool  = false
- @Published  var isPresented : Bool = false
- @Published var isNavigating : Bool = false
+ @Published var isLogin : Bool = true
+ @Published var isAppear : Bool  = false
+ @Published var isPresented : Bool = false
+ @Published var isSnackBarShown : Bool = false
 
 
   // textfield variables
@@ -61,22 +62,30 @@ class AuthViewModel : ObservableObject {
  }
 
  func loginUser()  -> Void {
-  let range = self.email.range(of: "@")?.lowerBound
-  let cacheData = String(email.prefix(upTo: range ?? String.Index(utf16Offset: 5, in: "asdadsadasd")))
+
   self.isLoading = true
   LocaleManager.shared.setStringValue(key: LocaleKeys.userPassword, value: self.password)
   LocaleManager.shared.setStringValue(key: LocaleKeys.email, value: self.email)
   service.loginUser(email: email, password: password) {
+   let range = self.email.range(of: "@")?.lowerBound
+   let cacheData = String(self.email.prefix(upTo: range ?? String.Index(utf16Offset: 5, in: "asdadsadasd")))
    self.localeManager.setStringValue(key: LocaleKeys.username, value: cacheData)
    print("onay")
    self.isLoading = false
    self.appState.appState = .Home
   }errorHandler: {
    self.isLoading = false
+   self.showSnackBar()
+
   }
  }
 
 
+
+
+ func showSnackBar() {
+   self.isSnackBarShown = true
+ }
 
 
 
