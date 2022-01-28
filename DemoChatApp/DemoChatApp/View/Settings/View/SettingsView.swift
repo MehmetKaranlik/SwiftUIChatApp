@@ -76,8 +76,6 @@ struct SettingsView: View {
   return GroupBox {
    GroupListTile(leftText: "Application Name:", rightText: "SwiftUI Demo ChatApp")
    GroupListTile(leftText: "Developer:", rightText: "Mehmet Karanlik")
-
-
   } label: {
    Text("Application Information")
   }
@@ -111,6 +109,7 @@ fileprivate func buildImageGroup(viewModel : SettingsViewModel) -> some View {
   .padding()
  }
 
+
  fileprivate func buildImage(viewModel : SettingsViewModel) -> some View {
   return ZStack(alignment: .bottomTrailing) {
    if viewModel.image == nil {
@@ -136,6 +135,7 @@ struct SettingsView_Previews: PreviewProvider {
   SettingsView()
  }
 }
+
 
 struct GroupListTile: View {
  let leftText : String

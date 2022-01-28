@@ -14,6 +14,7 @@ struct ChatViewNavigationBar: View {
     var body: some View {
      VStack {
       HStack(alignment:.center){
+       Spacer()
        Button {
         self.function()
        } label: {
@@ -24,14 +25,18 @@ struct ChatViewNavigationBar: View {
           .buttonTextModifier()
         }
        }
-
-       DynamicHorizontalSpacer(size: 50)
+       Spacer()
+       DynamicHorizontalSpacer(size: 20)
        Text(userName)
         .textModifier()
        Spacer()
-       AsyncCircularAvatarView(userImageUrl: .constant(userImageUrl), radius: 50)
-       
+       DynamicHorizontalSpacer(size: 40)
 
+       AsyncCircularAvatarView(userImageUrl: .constant(userImageUrl), radius: 50)
+
+
+
+       Spacer()
 
       }
       Divider()
@@ -43,7 +48,7 @@ struct ChatViewNavigationBar: View {
 
 struct ChatViewNavigationBar_Previews: PreviewProvider {
     static var previews: some View {
-     ChatViewNavigationBar(userImageUrl: "", userName: "Eddie" ,function: {
+     ChatViewNavigationBar(userImageUrl: "", userName: "fake@gmail.com" ,function: {
       print("123")
      })
       .previewLayout(.sizeThatFits)
@@ -55,7 +60,7 @@ struct ChatViewNavigationBar_Previews: PreviewProvider {
 fileprivate extension Text {
  func textModifier() -> some View {
   self
-   .font(.title2)
+   .font(.title3)
    .foregroundColor(.green)
    .blur(radius: UIConstants.blurRadius)
  }
@@ -70,6 +75,5 @@ fileprivate extension Image {
   self
    .font(.system(size: 10))
    .blur(radius: UIConstants.blurRadius)
-
  }
 }
