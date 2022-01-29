@@ -42,9 +42,8 @@ struct MessagePreviewTile: View {
     DynamicVerticalSpacer(size: 5)
     buildMessageText()
    }
-   Spacer()
-   Text(receiveData?.ISO8601Format() ?? "")
-   DynamicHorizontalSpacer(size: 10)
+   Spacer(minLength: 60)
+
   }
 
  }

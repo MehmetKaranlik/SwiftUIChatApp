@@ -12,5 +12,5 @@ enum NavigateStates {
  case Auth
  case Home
  case Settings
- case UserSelecting
+
 }

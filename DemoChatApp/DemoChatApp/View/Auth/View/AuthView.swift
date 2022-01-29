@@ -14,7 +14,7 @@ struct AuthView: View {
 
   // MARK:  body
  var body: some View {
-  NavigationView {
+ 
    VStack(spacing:0) {
      if viewModel.isLoading {
       LoadingAnimationView(fileName: "avatarLoading")
@@ -61,7 +61,7 @@ struct AuthView: View {
     }
 
 
-  }
+
 
   
 

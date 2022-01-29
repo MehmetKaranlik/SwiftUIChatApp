@@ -22,8 +22,6 @@ struct RootView: View {
        HomeView()
       case .Settings:
        SettingsView()
-      case .UserSelecting:
-        UserSelectingView()
      }
     }
 }

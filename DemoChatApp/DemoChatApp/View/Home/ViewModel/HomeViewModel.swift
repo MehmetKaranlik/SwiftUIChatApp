@@ -31,7 +31,7 @@ class HomeViewModel : ObservableObject {
  private let service : HomeViewService
 
  // bools
- @Published var isSheetPresented : Bool = false
+ @Published var isNavigatingToUserSelectView : Bool = false
 
 
  //String

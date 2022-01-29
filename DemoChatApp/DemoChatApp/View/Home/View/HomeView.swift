@@ -13,54 +13,71 @@ struct HomeView: View {
  @ObservedObject var appState : NavigationController
  let width : CGFloat = UIScreen.main.bounds.width
  let height : CGFloat = UIScreen.main.bounds.height
+ @State private var location: CGPoint
+
 
 
  init() {
   viewModel =  HomeViewModel()
   appState = NavigationController.shared
- }
- 
- 
+  location = CGPoint(x: (width - 30), y: height/2)
+}
+
   // MARK:  body
  var body: some View {
-    ZStack(alignment:.bottom) {
-
-    buildMessages(viewModel: self.viewModel)
-
-     RoundedRectangleButton(width:  width * 0.8, height: 40, foregroundColor: .white, backgroundColor: .green, opacity: 1, shadowApplied: true, buttonTitle: "+ New Message") {
-      appState.appState = .UserSelecting
-
-     }
-     .padding(.bottom ,20)
+  NavigationView {
+   ZStack {
+    buildMessages(viewModel: self.viewModel).tag(0)
+    buildNewConversationButton()
+    NavigationLink("", isActive: $viewModel.isNavigatingToUserSelectView) {
+     UserSelectingView()
     }
+   }
    .navigationBarModifiers(vm: self.viewModel)
+   .ignoresSafeArea(edges: .bottom)
+  }
 
+ }
+ fileprivate func buildNewConversationButton() -> some View {
+   Image(systemName: "plus")
+   .visualModifier()
+   .position(self.location)
+   .gesture(
+    DragGesture()
+     .onChanged({ value in
+      print(value)
+      self.location = value.location
+     })
+     .onEnded({ value in
+      withAnimation {
+       self.location.x = self.width - 30}
 
-  .navigationViewStyle(StackNavigationViewStyle())
+     }))
+   .gesture(TapGesture()
+             .onEnded({ time in
+    viewModel.isNavigatingToUserSelectView.toggle()
+   }))
 
  }
  
  fileprivate func buildMessages(viewModel: HomeViewModel) ->  some View {
-  return
-   VStack {
-    HomeViewNavigationBar(height: 55, userImageUrl: $viewModel.userImageUrl, imageSize: 45) {
-     appState.appState = .Settings
-    }
-    ScrollView {
-     VStack {
-      ForEach(0...2, id : \.self) { item in
-       MessagePreviewTile(userImageUrl: .constant(nil), userName: "Eddie", tileText: "Lorem ipsum", receiveData: Date.now)
+  VStack {
+   HomeViewNavigationBar(height: 55, userImageUrl: $viewModel.userImageUrl, imageSize: 45) {
+    appState.appState = .Settings
+   }
+   ScrollView {
+    VStack {
+     ForEach(0...20, id : \.self) { item in
+      NavigationLink {
+       ChatView(userName: "Eddie", userImageUrl: "")
+      } label: {
+     MessagePreviewTile(userImageUrl: .constant(nil), userName: "Eddie", tileText: "Lorem ipsum", receiveData: Date.now)
       }
-
-      DynamicVerticalSpacer(size: 70)
      }
-
     }
    }
-   .refreshable {
-   print("123")
-   viewModel.refreshFunction()
   }
+
 
   
   
@@ -81,8 +98,7 @@ struct HomeView_Previews: PreviewProvider {
 
  // MARK:  extensions
 fileprivate extension ZStack  {
- 
- 
+
  func navigationBarModifiers(vm : HomeViewModel) -> some View {
   self
    .navigationTitle("Messages")
@@ -90,6 +106,27 @@ fileprivate extension ZStack  {
    .navigationBarHidden(true)
    .ignoresSafeArea(edges: .bottom)
  }
- 
- 
+}
+
+
+fileprivate extension Image {
+ func visualModifier() -> some View {
+  self
+   .font(.title)
+   .foregroundColor(.white)
+   .frame(width: 55, height: 55, alignment: .center)
+   .background(Color.green.opacity(0.8))
+   .clipShape(Circle())
+ }
+
+}
+
+fileprivate struct GestureModifier: ViewModifier {
+ @State var location : CGPoint
+ let width : CGFloat
+ let function : () -> Void
+ func body(content: Content) -> some View {
+  content
+
+ }
 }
