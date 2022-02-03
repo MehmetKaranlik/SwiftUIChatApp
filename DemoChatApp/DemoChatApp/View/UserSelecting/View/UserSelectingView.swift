@@ -56,7 +56,7 @@ struct UserSelectingView: View {
  
  fileprivate func builNavigationTile(_ item: ChatUser) -> some View {
   return NavigationLink(isActive: $viewModel.isNavigatingToMessageView) {
-   ChatView(userName: item.userName, userImageUrl: item.userProfileUrl) // destination
+   ChatView(chatUser: item) // destination
   } label: {
    MessagePreviewTile(userImageUrl: .constant(item.userProfileUrl), userName: item.userName, tileText: "User Desc", receiveData: nil) // label
   }

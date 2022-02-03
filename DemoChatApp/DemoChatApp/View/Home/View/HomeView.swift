@@ -69,7 +69,7 @@ struct HomeView: View {
     VStack {
      ForEach(0...20, id : \.self) { item in
       NavigationLink {
-       ChatView(userName: "Eddie", userImageUrl: "")
+       ChatView(chatUser: ChatUser.init(email: "fake@gmail.com", userProfileUrl: "", uid: ""))
       } label: {
      MessagePreviewTile(userImageUrl: .constant(nil), userName: "Eddie", tileText: "Lorem ipsum", receiveData: Date.now)
       }
@@ -115,7 +115,7 @@ fileprivate extension Image {
    .font(.title)
    .foregroundColor(.white)
    .frame(width: 55, height: 55, alignment: .center)
-   .background(Color.green.opacity(0.8))
+   .background(Color.green)
    .clipShape(Circle())
  }
 

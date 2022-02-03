@@ -8,16 +8,13 @@
 import SwiftUI
 
 struct ChatView: View {
- let userName : String
- let userImageUrl : String
- @ObservedObject var viewModel : ChatViewModel = ChatViewModel()
- @ObservedObject var appState : NavigationController = NavigationController.shared
+ let chatUser : ChatUser?
+ @ObservedObject var viewModel : ChatViewModel
 
-
-
-
-
-
+ init(chatUser: ChatUser) {
+  self.chatUser = chatUser
+  viewModel = ChatViewModel(chatUser: self.chatUser!)!
+ }
 
 
 
@@ -29,25 +26,27 @@ struct ChatView: View {
   }
   .toolbar {
    ToolbarItem(placement:.navigationBarTrailing) {
-    AsyncCircularAvatarView(userImageUrl: .constant(userImageUrl), radius: 40)
+    HStack {
+     Text(chatUser!.userName)
+      .font(.title2)
+      .foregroundColor(.green.opacity(0.8))
+      .blur(radius: UIConstants.blurRadius)
+     DynamicHorizontalSpacer(size: 50)
+     AsyncCircularAvatarView(userImageUrl: .constant(chatUser?.userProfileUrl), radius: 40)
+    }
    }
   }
 
 
  }
 
-
-
-
-
  fileprivate func buildUpperStack() -> some View {
   VStack {
    Spacer()
    buildInputRow()
+
   }
  }
-
-
 
  fileprivate func buildMessages() -> some View {
    ScrollView(showsIndicators: false) {
@@ -57,9 +56,6 @@ struct ChatView: View {
    .padding(.horizontal,5)
   }
  }
-
-
-
 
  fileprivate func buildMessageRow(_ index: Int) -> some View {
   HStack(alignment:.center) {
@@ -74,7 +70,6 @@ struct ChatView: View {
   }
   .padding(.vertical, 5)
  }
-
 
  fileprivate func buildMessageBox(_ index : Int) -> some View {
   HStack(alignment: .center) {
@@ -97,14 +92,14 @@ struct ChatView: View {
    buildSendButton()
    Spacer()
   }
-  .frame(height: 80, alignment: .center)
-  .background(Color.gray.opacity(0.8))
+  .frame(height: 50, alignment: .center)
+  .background(Color(hex: 0xEEEEEE,alpha: 1))
  }
 
 
  fileprivate func buildSendButton() -> some View {
    Button {
-
+    viewModel.sendMessage()
   } label: {
    Image(systemName: "paperplane.fill")
     .font(.title)
@@ -112,7 +107,7 @@ struct ChatView: View {
  }
 
  fileprivate func buildTextField() -> some View {
-   TextField("", text: .constant("hellö"), prompt: Text("Type it!"))
+  TextField("", text: $viewModel.messageText, prompt: Text("Type it!"))
    .modifier(TextFieldModifier())
 
  }
@@ -123,18 +118,13 @@ struct ChatView: View {
     .font(.title)
   }
  }
-
-
-
-
 }
 
 struct ChatView_Previews: PreviewProvider {
  static var previews: some View {
-  ChatView(userName: "fake@gmail.com", userImageUrl: "")
+  ChatView(chatUser: .init(email: "fake@gmail.com", userProfileUrl: "", uid: ""))
  }
 }
-
 
 fileprivate struct  MessageBoxViewModifier: ViewModifier {
  let index : Int
@@ -150,13 +140,13 @@ fileprivate struct  MessageBoxViewModifier: ViewModifier {
  }
 }
 
-
 fileprivate struct TextFieldModifier: ViewModifier {
  func body(content: Content) -> some View {
   content
-   .foregroundColor(.white)
+   .foregroundColor(.black)
    .padding()
+   .frame(width: 250, height: 35, alignment: .center)
    .background(RoundedRectangle(cornerRadius: .infinity).stroke(lineWidth: 2).foregroundColor(.green).ignoresSafeArea())
-   .frame(width: 250, height: 40, alignment: .center)
+
  }
 }

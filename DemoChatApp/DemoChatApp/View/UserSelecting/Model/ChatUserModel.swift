@@ -8,10 +8,16 @@
 import Foundation
 
 
-struct ChatUser :  Hashable {
- 
+struct ChatUser : Codable, Hashable {
+ var userEmail : String
  var userName : String
  var userProfileUrl : String
+ var uid : String
 
- 
+ init(email : String, userProfileUrl : String, uid : String) {
+  self.userEmail = email
+  self.userProfileUrl = userProfileUrl
+  self.uid = uid
+  userName = email.userNameExtract()
+ }
 }
