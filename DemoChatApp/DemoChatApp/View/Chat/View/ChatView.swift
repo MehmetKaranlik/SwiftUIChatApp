@@ -102,7 +102,7 @@ struct ChatView: View {
 
  fileprivate func buildSendButton() -> some View {
    Button {
-    viewModel.sendMessage()
+    viewModel.submitMessage()
   } label: {
    Image(systemName: "paperplane.fill")
     .font(.title)

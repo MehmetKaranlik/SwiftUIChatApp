@@ -15,16 +15,13 @@ class ChatViewModel : ObservableObject {
  let chatUser : ChatUser?
 
  let auth : Auth
- let firestore : Firestore
  let service : ChatViewService
 
  init(chatUser: ChatUser){
   service = ChatViewService()
   auth = Firebase.Auth.auth()
-  firestore = Firestore.firestore()
   self.chatUser = chatUser
   findUserConditions()
-
  }
 
   // MARK:  Variables
@@ -37,12 +34,12 @@ class ChatViewModel : ObservableObject {
  @Published var messageText : String = ""
 
 
-  // MARK:  Functions
-
- func sendMessage() {
+ // MARK:  Functions
+ func submitMessage() {
   let messageData : [String : Any] = ["fromId" : self.fromId , "toId" : self.toId , "text" : messageText , "timestamp" : Timestamp()]
   service.sendMessage(fromID: self.fromId, toID: self.toId, messageData: messageData)
-
+  print("message sended")
+  messageText.removeAll()
  }
 
  func findUserConditions() {
