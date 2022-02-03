@@ -8,7 +8,8 @@
 import Foundation
 
 
-struct ChatUser : Codable, Hashable {
+struct ChatUser : Hashable , Identifiable {
+ var id: UUID
  var userEmail : String
  var userName : String
  var userProfileUrl : String
@@ -19,5 +20,6 @@ struct ChatUser : Codable, Hashable {
   self.userProfileUrl = userProfileUrl
   self.uid = uid
   userName = email.userNameExtract()
+  id = UUID()
  }
 }

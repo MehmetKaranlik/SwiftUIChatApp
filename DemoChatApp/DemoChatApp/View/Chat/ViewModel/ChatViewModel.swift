@@ -42,7 +42,8 @@ class ChatViewModel : ObservableObject {
   messageText.removeAll()
  }
 
- func findUserConditions() {
+
+ private func findUserConditions() {
   self.fromId = self.auth.currentUser?.uid  ?? ""
   self.toId = chatUser!.uid
  }

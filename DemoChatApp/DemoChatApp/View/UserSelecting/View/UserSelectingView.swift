@@ -35,7 +35,7 @@ struct UserSelectingView: View {
   ScrollView {
    VStack(alignment:.leading) {
       DynamicVerticalSpacer(size: 10)
-      ForEach(viewModel.users!, id: \.self) { item in
+      ForEach(viewModel.users!) { item in
        builNavigationTile(item)
       }
       Spacer()
@@ -60,6 +60,7 @@ struct UserSelectingView: View {
   } label: {
    MessagePreviewTile(userImageUrl: .constant(item.userProfileUrl), userName: item.userName, tileText: "User Desc", receiveData: nil) // label
   }
+
  }
 }
 

@@ -30,7 +30,6 @@ struct ChatViewService : ChatViewProtocol {
     print("Couldnt save message to current user \(err)")
    }
   }
-
   // saving message to corresponding user aka toID
   let counterDocument = firestore
    .collection("messages")

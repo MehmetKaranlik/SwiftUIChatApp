@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ChatView: View {
- let chatUser : ChatUser?
+ let chatUser : ChatUser
  @ObservedObject var viewModel : ChatViewModel
 
  init(chatUser: ChatUser) {
   self.chatUser = chatUser
-  viewModel = ChatViewModel(chatUser: self.chatUser!)
+  viewModel = ChatViewModel(chatUser: self.chatUser)
  }
 
 
@@ -34,12 +34,12 @@ struct ChatView: View {
 
  fileprivate func buildToolbarItem() -> some View {
   return HStack {
-   Text(chatUser!.userName)
+   Text(self.chatUser.userEmail)
     .font(.title2)
     .foregroundColor(.green.opacity(0.8))
     .blur(radius: UIConstants.blurRadius)
    DynamicHorizontalSpacer(size: 50)
-   AsyncCircularAvatarView(userImageUrl: .constant(chatUser?.userProfileUrl), radius: 40)
+   AsyncCircularAvatarView(userImageUrl: .constant(self.chatUser.userProfileUrl), radius: 40)
   }
  }
 
