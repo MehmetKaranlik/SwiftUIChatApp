@@ -28,7 +28,7 @@ struct UserSelectService : UserSelectProtocol {
    }
    QuerySnapshot?.documents.forEach({ snapshot in
     guard let email = snapshot["email"] as? String else {return}
-    temp.append(ChatUser.init(email: email, userProfileUrl: snapshot["userProfileImageUrl"] as! String, uid: snapshot["uid"] as! String))
+    temp.append(ChatUser(email: email, userProfileUrl: snapshot["userProfileImageUrl"] as! String, uid: snapshot["uid"] as! String))
     completionHandler(temp)
    }
                                     

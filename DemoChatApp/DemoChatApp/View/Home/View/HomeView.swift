@@ -45,7 +45,7 @@ struct HomeView: View {
    .gesture(
     DragGesture()
      .onChanged({ value in
-      print(value)
+
       self.location = value.location
      })
      .onEnded({ value in
@@ -69,7 +69,7 @@ struct HomeView: View {
     VStack {
      ForEach(0...20, id : \.self) { item in
       NavigationLink {
-       ChatView(chatUser: ChatUser.init(email: "fake@gmail.com", userProfileUrl: "", uid: ""))
+       ChatView(chatUser: ChatUser(email: "fake@gmail.com", userProfileUrl: "", uid: ""))
       } label: {
      MessagePreviewTile(userImageUrl: .constant(nil), userName: "Eddie", tileText: "Lorem ipsum", receiveData: Date.now)
       }
@@ -121,12 +121,4 @@ fileprivate extension Image {
 
 }
 
-fileprivate struct GestureModifier: ViewModifier {
- @State var location : CGPoint
- let width : CGFloat
- let function : () -> Void
- func body(content: Content) -> some View {
-  content
 
- }
-}

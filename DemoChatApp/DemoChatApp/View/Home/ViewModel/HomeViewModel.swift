@@ -77,7 +77,9 @@ class HomeViewModel : ObservableObject {
      let userImageUrl = data["userProfileImageUrl"] as? String
      self.localeManager.setStringValue(key: LocaleKeys.imageUrl, value: userImageUrl ?? "")
      self.userImageUrl =  self.localeManager.getStringValue(key: LocaleKeys.imageUrl)
-    }}}
+    }
+   }
+  }
  }
 
 

@@ -13,9 +13,8 @@ struct ChatView: View {
 
  init(chatUser: ChatUser) {
   self.chatUser = chatUser
-  viewModel = ChatViewModel(chatUser: self.chatUser!)!
+  viewModel = ChatViewModel(chatUser: self.chatUser!)
  }
-
 
 
  var body: some View {
@@ -26,18 +25,22 @@ struct ChatView: View {
   }
   .toolbar {
    ToolbarItem(placement:.navigationBarTrailing) {
-    HStack {
-     Text(chatUser!.userName)
-      .font(.title2)
-      .foregroundColor(.green.opacity(0.8))
-      .blur(radius: UIConstants.blurRadius)
-     DynamicHorizontalSpacer(size: 50)
-     AsyncCircularAvatarView(userImageUrl: .constant(chatUser?.userProfileUrl), radius: 40)
-    }
+    buildToolbarItem()
    }
   }
 
 
+ }
+
+ fileprivate func buildToolbarItem() -> some View {
+  return HStack {
+   Text(chatUser!.userName)
+    .font(.title2)
+    .foregroundColor(.green.opacity(0.8))
+    .blur(radius: UIConstants.blurRadius)
+   DynamicHorizontalSpacer(size: 50)
+   AsyncCircularAvatarView(userImageUrl: .constant(chatUser?.userProfileUrl), radius: 40)
+  }
  }
 
  fileprivate func buildUpperStack() -> some View {
