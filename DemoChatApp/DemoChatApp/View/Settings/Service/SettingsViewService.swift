@@ -33,10 +33,10 @@ struct SettingsViewService : SettingsViewProtocol {
      print("Failed to download image: \(err)")
     }else {
       //   print("Successfully stored image with url: \(url!.absoluteURL)")
-     let userImageData : [String:String] = ["userProfileImageUrl" : url!.absoluteString]
+     let userImageData : [String:String] = [FirebaseKeys.userProfileImageUrl : url!.absoluteString]
      FirebaseFirestore.Firestore
       .firestore()
-      .collection("users")
+      .collection(FirebaseKeys.users)
       .document(uuid).setData(userImageData) { error in
        if let err = error {
         print("Cant push user credentails to firestore : \(err)")

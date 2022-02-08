@@ -30,7 +30,7 @@ struct HomeViewService : HomeViewProtocol {
  // MARK:  call userName
  func getUserName(completionHandler: @escaping (DocumentSnapshot?, Error?) -> Void) -> Void {
   guard let uid = auth.currentUser?.uid else { return }
-  firestore.collection("users").document(uid).getDocument { snapshot, error in
+  firestore.collection(FirebaseKeys.users).document(uid).getDocument { snapshot, error in
    if let err = error {
     print("Couldnt get username : \(err)")
    }

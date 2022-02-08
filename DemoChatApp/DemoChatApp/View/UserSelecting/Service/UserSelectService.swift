@@ -22,13 +22,13 @@ struct UserSelectService : UserSelectProtocol {
  
  func fetchAllUsers(completionHandler: @escaping FetchAllUsersCompletionHandler) {
   var temp = [ChatUser]()
-  firestore.collection("users").getDocuments { QuerySnapshot, error in
+  firestore.collection(FirebaseKeys.users).getDocuments { QuerySnapshot, error in
    if let error = error {
     print("Failed to fetch users from fires store : \(error)")
    }
    QuerySnapshot?.documents.forEach({ snapshot in
-    guard let email = snapshot["email"] as? String else {return}
-    temp.append(ChatUser(email: email, userProfileUrl: snapshot["userProfileImageUrl"] as! String, uid: snapshot["uid"] as! String))
+    guard let email = snapshot[FirebaseKeys.email] as? String else {return}
+    temp.append(ChatUser(email: email, userProfileUrl: snapshot[FirebaseKeys.userProfileImageUrl] as! String, uid: snapshot[FirebaseKeys.uid] as! String))
     completionHandler(temp)
    }
                                     

@@ -26,8 +26,6 @@ class UserSelectingViewModel : ObservableObject {
  }
 
 
-
-
  private func getAllUsers() {
   service.fetchAllUsers { data in
    self.users = data

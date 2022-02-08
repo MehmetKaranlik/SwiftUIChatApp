@@ -45,10 +45,10 @@ struct AuthViewService : AuthViewProtocol {
   // MARK:  store image to firestore
  private func storeUserInformation(imageProfileUrl : URL, email : String, password : String) -> Void {
   guard let uid = FirebaseAuth.Auth.auth().currentUser?.uid else { return }
-  let userData = ["email" : email, "password" : password , "uid" : uid, "userProfileImageUrl" :      imageProfileUrl.absoluteString ]
+  let userData = [FirebaseKeys.email : email, "password" : password , FirebaseKeys.uid : uid, FirebaseKeys.userProfileImageUrl : imageProfileUrl.absoluteString ]
   FirebaseFirestore.Firestore
    .firestore()
-   .collection("users")
+   .collection(FirebaseKeys.users)
    .document(uid).setData(userData) { error in
     if let err = error {
      print("Cant push user credentails to firestore : \(err)")

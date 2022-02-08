@@ -15,8 +15,6 @@ struct HomeView: View {
  let height : CGFloat = UIScreen.main.bounds.height
  @State private var location: CGPoint
 
-
-
  init() {
   viewModel =  HomeViewModel()
   appState = NavigationController.shared

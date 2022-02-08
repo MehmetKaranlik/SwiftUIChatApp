@@ -22,12 +22,16 @@ class ChatViewModel : ObservableObject {
   auth = Firebase.Auth.auth()
   self.chatUser = chatUser
   findUserConditions()
+  fetchMessages()
  }
 
   // MARK:  Variables
 
   // bool
  @Published var isNavigatingHomeView : Bool = false
+
+ //arrays
+ @Published var messages = [Message]()
 
 
   //string
@@ -36,7 +40,7 @@ class ChatViewModel : ObservableObject {
 
  // MARK:  Functions
  func submitMessage() {
-  let messageData : [String : Any] = ["fromId" : self.fromId , "toId" : self.toId , "text" : messageText , "timestamp" : Timestamp()]
+  let messageData : [String : Any] = [FirebaseKeys.fromId : self.fromId , FirebaseKeys.toId : self.toId , FirebaseKeys.text : messageText , FirebaseKeys.timestamp : Timestamp()]
   service.sendMessage(fromID: self.fromId, toID: self.toId, messageData: messageData)
   print("message sended")
   messageText.removeAll()
@@ -46,5 +50,11 @@ class ChatViewModel : ObservableObject {
  private func findUserConditions() {
   self.fromId = self.auth.currentUser?.uid  ?? ""
   self.toId = chatUser!.uid
+ }
+
+ private func fetchMessages() {
+  service.fetchMessages(toID: self.toId, chatUser: self.chatUser!) { data in
+   self.messages = data
+  }
  }
 }

@@ -55,8 +55,8 @@ class HomeViewModel : ObservableObject {
    if let err = error {
     print(err)
    }else {
-    if  data["userImageUrl"] as? String != "" {
-     let userImageUrl = data["userProfileImageUrl"] as? String
+    if  data[FirebaseKeys.userProfileImageUrl] as? String != "" {
+     let userImageUrl = data[FirebaseKeys.userProfileImageUrl] as? String
      self.localeManager.setStringValue(key: LocaleKeys.imageUrl, value: userImageUrl ?? "")
      self.userImageUrl =  self.localeManager.getStringValue(key: LocaleKeys.imageUrl)
     }}
@@ -71,10 +71,10 @@ class HomeViewModel : ObservableObject {
    if let err = error {
     print(err)
    }else {
-    self.user.email = data["email"] as? String ?? ""
-    self.user.userImageUrl = data["userProfileImageUrl"] as? String ?? ""
-    if  data["userImageUrl"] as? String != "" {
-     let userImageUrl = data["userProfileImageUrl"] as? String
+    self.user.email = data[FirebaseKeys.email] as? String ?? ""
+    self.user.userImageUrl = data[FirebaseKeys.userProfileImageUrl] as? String ?? ""
+    if  data[FirebaseKeys.userProfileImageUrl] as? String != "" {
+     let userImageUrl = data[FirebaseKeys.userProfileImageUrl] as? String
      self.localeManager.setStringValue(key: LocaleKeys.imageUrl, value: userImageUrl ?? "")
      self.userImageUrl =  self.localeManager.getStringValue(key: LocaleKeys.imageUrl)
     }
