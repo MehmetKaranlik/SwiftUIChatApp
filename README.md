@@ -18,7 +18,7 @@
 <li>Singleton Pattern</li>
 <li>Atomic Design</li>
 <li>MVVM architecture</li>
-<li>Real-Time chat function (not implemented yet)</li>
+<li>Real-Time chat function</li>
  </ul>
 
 
