@@ -21,7 +21,7 @@
 <li>Real-Time chat function</li>
  </ul>
 
-*** Known bugs : LottieAnimation freezes when navigated to another page and comeback, i couldnt find proper solution yet ***
+**Known bugs : LottieAnimation freezes when navigated to another page and comeback, i couldnt find proper solution yet
 
 https://user-images.githubusercontent.com/89414084/153095944-fbad48f4-ead4-4f13-abc6-258ad2edd0d5.mp4
 
